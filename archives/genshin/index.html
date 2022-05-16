@@ -19,7 +19,7 @@
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "/5e48c8aeefd01ba5037554bc52c19f0e.json"
+            api: "/0b4bdd18077bc818c79d6e92f8a21ea7.json"
         }
     </script>
     
@@ -81,9 +81,9 @@
             </span>
             <div class="ga-content_body">
                 <p>最近在学习python，然后看了我室友最近在看小说，就先看了几篇文章，然后爬了本他正在看的小说练练手。然后就有了这篇爬取原神同人社的pljj的照片，第一次写博客，大家多包涵包涵鸭！</p>
-<p>欢迎交流GitHub：Ricardo-Zzhao @<a href="https://github.com/Ricardo-Zzhao">https://github.com/Ricardo-Zzhao</a>
-邮箱：ricardoz_y@qq.com
-博客：<a href="https://mblog.ricardoz.site">Ricardoz's Site</a></p>
+<p>欢迎交流GitHub：Ricardo-Zzhao @<a href="https://github.com/Ricardo-Zzhao">https://github.com/Ricardo-Zzhao</a></p>
+<p>邮箱：ricardoz_y@qq.com</p>
+<p>博客：<a href="https://mblog.ricardoz.site">Ricardoz's Site</a></p>
 <h2>1.首先导入相关的模块</h2>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">jsonpath</span>
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -92,10 +92,10 @@
 </pre></div>
 <h2>2.页面分析</h2>
 <p>先打开<a href="https://bbs.mihoyo.com/ys/home/29?type=hot">米游社·原神</a>
-<figure style="flex: 68.42672413793103" ><img width="1270" height="928" src="https://img-blog.csdnimg.cn/20210423222301524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /><figcaption>在这里插入图片描述</figcaption></figure>
+<figure style="flex: 68.42672413793103" ><img width="1270" height="928" src="https://img-blog.csdnimg.cn/20210423222301524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /></figure>
 找到热门部分，<strong>右击检查，network，ctrl+f8之后点击多回蓝色箭头</strong>，找到下面接口，接口带有getForumPostList，请求拿到数据。
-<figure style="flex: 99.68684759916492" ><img width="955" height="479" src="https://img-blog.csdnimg.cn/20210423223314224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /><figcaption>在这里插入图片描述</figcaption></figure>
-<figure style="flex: 64.6112600536193" ><img width="964" height="746" src="https://img-blog.csdnimg.cn/20210423223327205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /><figcaption>在这里插入图片描述</figcaption></figure></p>
+<figure style="flex: 99.68684759916492" ><img width="955" height="479" src="https://img-blog.csdnimg.cn/20210423223314224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /></figure>
+<figure style="flex: 64.6112600536193" ><img width="964" height="746" src="https://img-blog.csdnimg.cn/20210423223327205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /></figure></p>
 <p>请求网站获取数据</p>
 <div class="highlight"><pre><span></span><span class="n">headers</span> <span class="o">=</span><span class="p">{</span>
     <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span><span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36&#39;</span>
@@ -108,7 +108,7 @@
 <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://bbs-api.mihoyo.com/post/wapi/getForumPostList?forum_id=29&amp;gids=2&amp;is_good=false&amp;is_hot=true&amp;page_size=20&#39;</span>
 </pre></div>
 <p>获取网页参数
-<figure style="flex: 172.33333333333334" ><img width="517" height="150" src="https://img-blog.csdnimg.cn/20210424001944321.png" /><figcaption>在这里插入图片描述</figcaption></figure></p>
+<figure style="flex: 172.33333333333334" ><img width="517" height="150" src="https://img-blog.csdnimg.cn/20210424001944321.png" /></figure></p>
 <div class="highlight"><pre><span></span><span class="n">param</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;forum_id&#39;</span><span class="p">:</span> <span class="s1">&#39;29&#39;</span><span class="p">,</span>
             <span class="s1">&#39;gids&#39;</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span>
@@ -146,7 +146,7 @@ page_size: 代表这个数据总共有多少个图片</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">image_name</span><span class="p">,</span> <span class="s1">&#39;下载完毕！！！&#39;</span><span class="p">)</span>
 </pre></div>
 <h2>5.成果展示</h2>
-<p><figure style="flex: 171.24505928853756" ><img width="1733" height="506" src="https://img-blog.csdnimg.cn/20210424003242887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /><figcaption>在这里插入图片描述</figcaption></figure>
+<p><figure style="flex: 171.24505928853756" ><img width="1733" height="506" src="https://img-blog.csdnimg.cn/20210424003242887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /></figure>
 爬取成功啦！</p>
 <h2>6.完整代码</h2>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">jsonpath</span>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ricardoz's Site</title><link>/</link><description>凌晨四点，我看海棠花未眠。</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>/logo.png</url><title>Ricardoz's Site</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 16 May 2022 09:14:55 +0806</lastBuildDate><pubDate>Mon, 16 May 2022 09:14:55 +0806</pubDate><item><title>Hello World!</title><link>/archives/typography/</link><description>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ricardoz's Site</title><link>/</link><description>凌晨四点，我看海棠花未眠。</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>/logo.png</url><title>Ricardoz's Site</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 16 May 2022 09:20:26 +0806</lastBuildDate><pubDate>Mon, 16 May 2022 09:20:26 +0806</pubDate><item><title>Hello World!</title><link>/archives/typography/</link><description>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
 &lt;h3&gt;L3 Heading&lt;/h3&gt;
 &lt;h4&gt;L4 Heading&lt;/h4&gt;
 &lt;h5&gt;L5 Heading&lt;/h5&gt;
@@ -81,9 +81,9 @@
 &lt;a style="display:block" target="_blank" href="https://www.imalan.cn" class="board-item"&gt;                 &lt;div class="board-thumb"&gt;&lt;img src="https://secure.gravatar.com/avatar/1741a6eef5c824899e347e4afcbaa75d?s=200&amp;r=G&amp;d="&gt;&lt;/div&gt;                 &lt;div class="board-title"&gt;AlanDecode&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;&lt;hr&gt;&lt;div class="footnotes"&gt;&lt;ol&gt;&lt;li id="fn_1"&gt;Home page for AlanDecode &lt;a no-style href="#fn_ref_1"&gt;↩&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</description><author>hi@imalan.cn (AlanDecode)</author><guid isPermaLink="true">/archives/typography/</guid><pubDate>Wed, 18 Dec 2019 16:50:00 +0806</pubDate></item><item><title>我的第一篇文章</title><link>/archives/my-first-awesome-post/</link><description>&lt;p&gt;这是我的第一篇文章。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！
 &lt;figure style="flex: 92.88888888888889" &gt;&lt;img width="836" height="450" src="/archives/assets/e0affbc80ccb2d596c87b520e37e7071.jpg" /&gt;&lt;figcaption&gt;幽灵公主剧照&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 </description><author>hi@imalan.cn (华仔仔)</author><guid isPermaLink="true">/archives/my-first-awesome-post/</guid><pubDate>Sat, 16 May 2020 20:34:00 +0806</pubDate></item><item><title>爬取原神同人社的pljj照片</title><link>/archives/genshin/</link><description>&lt;p&gt;最近在学习python，然后看了我室友最近在看小说，就先看了几篇文章，然后爬了本他正在看的小说练练手。然后就有了这篇爬取原神同人社的pljj的照片，第一次写博客，大家多包涵包涵鸭！&lt;/p&gt;
-&lt;p&gt;欢迎交流GitHub：Ricardo-Zzhao @&lt;a href="https://github.com/Ricardo-Zzhao"&gt;https://github.com/Ricardo-Zzhao&lt;/a&gt;
-邮箱：ricardoz_y@qq.com
-博客：&lt;a href="https://mblog.ricardoz.site"&gt;Ricardoz's Site&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;欢迎交流GitHub：Ricardo-Zzhao @&lt;a href="https://github.com/Ricardo-Zzhao"&gt;https://github.com/Ricardo-Zzhao&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;邮箱：ricardoz_y@qq.com&lt;/p&gt;
+&lt;p&gt;博客：&lt;a href="https://mblog.ricardoz.site"&gt;Ricardoz's Site&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;1.首先导入相关的模块&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;jsonpath&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;requests&lt;/span&gt;
@@ -92,10 +92,10 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;2.页面分析&lt;/h2&gt;
 &lt;p&gt;先打开&lt;a href="https://bbs.mihoyo.com/ys/home/29?type=hot"&gt;米游社·原神&lt;/a&gt;
-&lt;figure style="flex: 68.42672413793103" &gt;&lt;img width="1270" height="928" src="https://img-blog.csdnimg.cn/20210423222301524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /&gt;&lt;figcaption&gt;在这里插入图片描述&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure style="flex: 68.42672413793103" &gt;&lt;img width="1270" height="928" src="https://img-blog.csdnimg.cn/20210423222301524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /&gt;&lt;/figure&gt;
 找到热门部分，&lt;strong&gt;右击检查，network，ctrl+f8之后点击多回蓝色箭头&lt;/strong&gt;，找到下面接口，接口带有getForumPostList，请求拿到数据。
-&lt;figure style="flex: 99.68684759916492" &gt;&lt;img width="955" height="479" src="https://img-blog.csdnimg.cn/20210423223314224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /&gt;&lt;figcaption&gt;在这里插入图片描述&lt;/figcaption&gt;&lt;/figure&gt;
-&lt;figure style="flex: 64.6112600536193" &gt;&lt;img width="964" height="746" src="https://img-blog.csdnimg.cn/20210423223327205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /&gt;&lt;figcaption&gt;在这里插入图片描述&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;figure style="flex: 99.68684759916492" &gt;&lt;img width="955" height="479" src="https://img-blog.csdnimg.cn/20210423223314224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /&gt;&lt;/figure&gt;
+&lt;figure style="flex: 64.6112600536193" &gt;&lt;img width="964" height="746" src="https://img-blog.csdnimg.cn/20210423223327205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;请求网站获取数据&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="s1"&gt;&amp;#39;User-Agent&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36&amp;#39;&lt;/span&gt;
@@ -108,7 +108,7 @@
 &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://bbs-api.mihoyo.com/post/wapi/getForumPostList?forum_id=29&amp;amp;gids=2&amp;amp;is_good=false&amp;amp;is_hot=true&amp;amp;page_size=20&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;获取网页参数
-&lt;figure style="flex: 172.33333333333334" &gt;&lt;img width="517" height="150" src="https://img-blog.csdnimg.cn/20210424001944321.png" /&gt;&lt;figcaption&gt;在这里插入图片描述&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;figure style="flex: 172.33333333333334" &gt;&lt;img width="517" height="150" src="https://img-blog.csdnimg.cn/20210424001944321.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;param&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
             &lt;span class="s1"&gt;&amp;#39;forum_id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;29&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
             &lt;span class="s1"&gt;&amp;#39;gids&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -146,7 +146,7 @@ page_size: 代表这个数据总共有多少个图片&lt;/p&gt;
     &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;下载完毕！！！&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;5.成果展示&lt;/h2&gt;
-&lt;p&gt;&lt;figure style="flex: 171.24505928853756" &gt;&lt;img width="1733" height="506" src="https://img-blog.csdnimg.cn/20210424003242887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /&gt;&lt;figcaption&gt;在这里插入图片描述&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;figure style="flex: 171.24505928853756" &gt;&lt;img width="1733" height="506" src="https://img-blog.csdnimg.cn/20210424003242887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /&gt;&lt;/figure&gt;
 爬取成功啦！&lt;/p&gt;
 &lt;h2&gt;6.完整代码&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;jsonpath&lt;/span&gt;
