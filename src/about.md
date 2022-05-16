@@ -26,7 +26,7 @@ tags:
 
 <center>使用 GitHub 管理与构建
 
-<center><h2> contact
+<center><h3> contact</center></h3>
 
 <center>Email: ricardoz_y@qq.com
 
