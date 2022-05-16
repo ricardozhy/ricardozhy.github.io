@@ -12,11 +12,24 @@ tags:
   - theme
 ---
 
-这里是我的个人博客，通过 GitHub 管理与构建。
+<center>关于我:
+
+<center>故事的开始
+
+<center>离人愁、伤别离;碎碎念、深深思
+
+<center>凋零落、吟空悲;续繁华、又何处
+
+<center>目前就读于南京工程学院一个没有天赋却想得到自己想要的东西的人
+
+<center>关于博客:
+
+<center>使用 GitHub 管理与构建
+
+<center><h2> contact
+
+<center>Email: ricardoz_y@qq.com
 
 
-## Contact
 
-Email: hi#imalan.cn (replace # with @)
 
-Telegram：[AlanDecode](https://t.me/alandecode)
