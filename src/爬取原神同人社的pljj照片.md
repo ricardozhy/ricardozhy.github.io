@@ -18,7 +18,9 @@ excerpt: 爬取原神同人社的pljj照片
 最近在学习python，然后看了我室友最近在看小说，就先看了几篇文章，然后爬了本他正在看的小说练练手。然后就有了这篇爬取原神同人社的pljj的照片，第一次写博客，大家多包涵包涵鸭！
 
 欢迎交流GitHub：Ricardo-Zzhao @[https://github.com/Ricardo-Zzhao](https://github.com/Ricardo-Zzhao)
+
 邮箱：ricardoz_y@qq.com
+
 博客：[Ricardoz's Site](https://mblog.ricardoz.site)
 
 ## 1.首先导入相关的模块
@@ -34,10 +36,10 @@ import json
 ## 2.页面分析
 
 先打开[米游社·原神](https://bbs.mihoyo.com/ys/home/29?type=hot)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210423222301524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20210423222301524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70)
 找到热门部分，**右击检查，network，ctrl+f8之后点击多回蓝色箭头**，找到下面接口，接口带有getForumPostList，请求拿到数据。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210423223314224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210423223327205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20210423223314224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20210423223327205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70)
 
 
 请求网站获取数据
@@ -55,7 +57,7 @@ url='https://bbs-api.mihoyo.com/post/wapi/getForumPostList?forum_id=29&gids=2&is
 ```
 
 获取网页参数
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210424001944321.png)
+![](https://img-blog.csdnimg.cn/20210424001944321.png)
 
 ```python
 param = {
@@ -112,7 +114,7 @@ with open(image_path, 'wb') as f:
 
 ## 5.成果展示
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210424003242887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20210424003242887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70)
 爬取成功啦！
 
 ## 6.完整代码
