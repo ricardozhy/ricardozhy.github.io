@@ -35,9 +35,14 @@ external_links = [
         "brief": "🏄‍ Go My Own Way."
     },
     {
-        "name": "三無計劃",
-        "url": "https://www.imalan.cn",
-        "brief": "熊猫小A的主页。"
+        "name": "Felix",
+        "url": "https://blog.zhangshanbeng.cn/",
+        "brief": "Felix's site"
+    },
+        {
+        "name": "jing-mo",
+        "url": "https://jing-mo.github.io/",
+        "brief": "京墨の部屋"
     }
 ]
 nav = [
@@ -60,18 +65,13 @@ nav = [
 
 social_links = [
     {
-        "name": "Twitter",
-        "url": "https://twitter.com/AlanDecode",
-        "icon": "gi gi-twitter"
-    },
-    {
         "name": "GitHub",
-        "url": "https://github.com/AlanDecode",
+        "url": "https://github.com/Ricardo-Zzhao",
         "icon": "gi gi-github"
     },
     {
         "name": "Weibo",
-        "url": "https://weibo.com/5245109677/",
+        "url": "https://weibo.com/",
         "icon": "gi gi-weibo"
     }
 ]
