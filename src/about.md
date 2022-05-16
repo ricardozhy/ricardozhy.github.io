@@ -2,9 +2,9 @@
 layout: page
 title: 关于
 slug: about
-date: 2017/06/28 17:26:00
+date: 2021/06/28 17:26:00
 status: publish
-author: AlanDecode
+author: 华仔仔
 categories: 
   - Maverick
   - Dev
