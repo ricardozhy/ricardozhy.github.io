@@ -1,0 +1,65 @@
+---
+layout: post
+title: Linux实验2
+slug: linux
+date: 2022-05-19 16:40
+status: publish
+author: 华仔仔
+categories: 
+  - Linux
+tags: 
+  - Linux
+excerpt: Linux实验2
+
+---
+
+
+
+**实验目的和要求：**
+
+进程的基本概念及进程的结构Linux环境下进程的相关函数的应用守护进程的概念、启动和建立进程控制程序的编写
+
+**实验条件：**
+
+1、装有Linux操作系统的微型计算机；
+
+## 实验过程
+
+Liunx进程创建
+
+**![](media/281c3141946004dac3df79585b6b773b.emf)**
+
+**![](media/8f0c40bf9fdb786d9f3777ca4c2090f8.emf)**
+
+**![](media/fbc3dc0939f0b9f184b42144017e5cd6.emf)**
+
+**![](media/ddf31bb0fe5094b5c7b53365df479d4e.emf)**
+
+**![](media/72f21a4ab42dab395dd3b8d374fddf05.emf)**
+
+僵尸进程
+
+**![](media/42c8be57d37e8b8ab0efb103f78a1803.emf)**
+
+**![](media/83302c135e36df20844fa9cb471eb02b.emf)**
+
+守护进程
+
+**![](media/e3e49e90a56c68692ada3a82b3d01e5d.emf)**
+
+**![](media/07f8be2bb9f40a907b851ddcdb7a9bfb.emf)**
+
+**![](media/2deb12dd7d253b567f68c002488ea87a.emf)**
+
+\*\*  
+\*\*
+
+## 实验结果分析
+
+1、熟悉并记录命令执行结果。
+
+2、写出自己的心得体会。3. 实验报告仅提供封面，不提供正文模板。实验报告要求如下：
+
+1）至少包含实验过程、实验结果、选择部分度量项目对结果进行简要解释。
+
+2）报告章节要组织合理。**核心思想是：通过你的报告能够让初学者可以很快掌握Linux下的进程启动调用，类似做一个教程，当你把自己的成果放到百度文库，能够帮助更多的人。**
