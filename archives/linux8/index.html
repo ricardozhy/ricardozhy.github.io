@@ -23,19 +23,20 @@
         }
     </script>
     
-<title>分类: 随笔 - Ricardoz's Site</title>
+<title>Linux实验8 - Ricardoz's Site</title>
 <meta name="author" content="华仔仔" />
-<meta name="description" content="凌晨四点，我看海棠花未眠。" />
-<meta property="og:title" content="分类: 随笔 - Ricardoz's Site" />
-<meta property="og:description" content="凌晨四点，我看海棠花未眠。" />
+<meta name="description" content="Linux实验8" />
+<meta property="og:title" content="Linux实验8 - Ricardoz's Site" />
+<meta property="og:description" content="Linux实验8" />
 <meta property="og:site_name" content="Ricardoz's Site" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/category/随笔/" />
-<meta property="og:image" content="Ricardoz's Site" />
-<meta name="twitter:title" content="分类: 随笔 - Ricardoz's Site" />
-<meta name="twitter:description" content="凌晨四点，我看海棠花未眠。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/linux8/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2022-05-19T16:58:00-00.00" />
+<meta name="twitter:title" content="Linux实验8 - Ricardoz's Site" />
+<meta name="twitter:description" content="Linux实验8" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/logo.png" />
+<meta name="twitter:image" content="" />
 
 
     
@@ -63,27 +64,77 @@
             <div class="wrapper">
                 
 <main>    
-    
+    <section class="ga-section ga-content">
+        <article class="yue">
+            <h1 class="ga-post_title">Linux实验8</h1>
+            <span class="ga-post_meta ga-mono">
+                <span>华仔仔</span>
+                <time>
+                    2022-05-19
+                </time>
+                
+                in <a no-style class="category" href="/category/Linux/">
+                    Linux
+                </a>
+                
+                
+            </span>
+            <div class="ga-content_body">
+                <p><strong>实验目的和要求：</strong></p>
+<p>1了解stty终端模式2 可以针对终端设备进行开发</p>
+<p><strong>实验条件：</strong></p>
+<p>1、装有Linux操作系统的微型计算机；</p>
+<h2>实验过程</h2>
+<p>tty(终端设备的统称):</p>
+<p>在UNIX系统中，计算机显示器通常被称为控制台终端（Console）。它仿真了类型为Linux的一种终端（TERM=Linux），并且有一些设备特殊文件与之相关联：tty0、tty1、tty2等。这些文件赋予了linux同时处理多任务，多窗口切换的能力。</p>
+<p>我们通常在linux下看到的控制台一般是/dev/ttyN，用户可以使用alt+Fn切换控制台，看起来感觉存在多个屏幕。</p>
+<p>这种虚拟控制台对应tty1~n，（ssh就是这样，当你通过ssh登录一台服务器以后，就会在/dev/pts/下生成一个控制台设备文件，对应ttyＮ，通常情况下，1\&lt;=n\&lt;=63）其中 ：</p>
+<p>tty0就是/dev/console，/dev/console指向当前虚拟终端。</p>
+<p>/dev/tty1等代表第一个虚拟控制台</p>
+<p>例如当使用ALT+F2进行切换时，系统的虚拟控制台为/dev/tty2 ，当前控制台（/dev/tty）则指向/dev/tty2</p>
+<p>你可以登录到不同的虚拟控制台上去，因而可以让系统同时有几个不同的会话存在。在一些安全性要求比较高的场合，我们通常会关闭终端的显示，比如输入密码的时候.</p>
+<p><strong>要求根据上述知识，结合课程内容设计一个可以关闭终端回显的代码。</strong></p>
+<p><strong><br>
+参考解答：</strong></p>
+<p><figure style="flex: 70.2127659574468" ><img width="660" height="470" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/76e4cd0440662793323960e8950eb345.png" /></figure></p>
+<p><strong>实验2 获取tty控制台信息：</strong></p>
+<p><figure style="flex: 168.16143497757847" ><img width="750" height="223" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/35339b56166be4a5fe9f937c90a89f97.png" /></figure><strong>请结合上面的例子，研读termios.h的源码，详细阐述stty中的数据结构以及控制方法，并撰写实验报告</strong>。</p>
+<h2>实验结果分析</h2>
+<p>1、熟悉并记录命令执行结果。</p>
+<p>2、写出自己的心得体会。3. 实验报告仅提供封面，不提供正文模板。实验报告要求如下：</p>
+<p>1）至少包含实验过程、实验结果、选择部分度量项目对结果进行简要解释。</p>
+<p>2）报告章节要组织合理。</p>
+<p><strong>核心思想是：使用man手册，详细分析stty的数据结构，并改良第一个实验，实现根据输入参数，确定tty设备的回显打开与关闭。</strong></p>
 
-<section id="ga-archive_list" class="ga-section" data-title="Cate: 随笔">
-    <ul>
-        
-        <li>
-            <h1><a target="_self" class="ga-highlight" href="/archives/tangduoling/">唐多令</a></h1>
-            <time class="ga-mono">
-                2022-05-16
-            </time>
-        </li>
-        
-    </ul>
+            </div>
+        </article>
+        <div id="ga-tags">
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/Linux/">#Linux</a>
+    </span>
+    
+</div>
+    </section>
+
+    
+<section id="ga-content_pager">
+
+    <div class="next">
+        <h3>没有了</h3>
+        <p class="yue">这是最新的文章</p>
+    </div>
+
+
+    <div class="prev">
+        <a class="ga-highlight" href="/archives/linux7/">Linux实验7</a>
+        <p class="yue">Linux实验7</p>
+    </div>
+
 </section>
 
-<section class="ga-section ga-mono" id="ga-pager">
-    
-    <span>Page 1 of 1</span>
-    
-</section>
 
+    
 
 </main>
 
