@@ -11,15 +11,15 @@
     <meta name="template" content="Galileo" />
     <link rel="alternate" type="application/rss+xml" title="Ricardoz's Site &raquo; RSS 2.0" href="/feed/index.xml" />
     <link rel="alternate" type="application/atom+xml" title="Ricardoz's Site &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
-    <link rel="stylesheet" href="/assets/galileo-3f4dcc35c9.css">
-    <link rel="stylesheet" href="/assets/ExSearch/ExSearch-182e5a8868.css">
-    <link rel="stylesheet" href="/assets/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/galileo-3f4dcc35c9.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/katex.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "/2810800c5bdb51529140510dbbeae4ea.json"
+            api: "https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/2810800c5bdb51529140510dbbeae4ea.json"
         }
     </script>
     
@@ -96,9 +96,9 @@
 <p><strong>要求根据上述知识，结合课程内容设计一个time的系统调用</strong></p>
 <p><strong><br>
 参考解答：</strong></p>
-<p><figure style="flex: 85.79545454545455" ><img width="755" height="440" src="/archives/assets/5b0c25110143288efbc0df7bc47fc579.png" /></figure></p>
+<p><figure style="flex: 85.79545454545455" ><img width="755" height="440" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/5b0c25110143288efbc0df7bc47fc579.png" /></figure></p>
 <p><strong>实验2 使用asm完成：</strong></p>
-<p><figure style="flex: 124.27184466019418" ><img width="1024" height="412" src="/archives/assets/080d653fffaf51b4b11463d18bb92f0c.png" /></figure><strong>请结合上面的例子，实现rename的系统调用</strong>。</p>
+<p><figure style="flex: 124.27184466019418" ><img width="1024" height="412" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/080d653fffaf51b4b11463d18bb92f0c.png" /></figure><strong>请结合上面的例子，实现rename的系统调用</strong>。</p>
 <p><strong>提高部分（添加一个自定义的系统调用（全部完成可以获得附加分）</strong>）</p>
 <p>系统调用（System Call）是操作系统为在用户态运行的进程与硬件设备（如CPU、磁盘、打印机等）</p>
 <p>我们需要完成：</p>
@@ -111,7 +111,7 @@
 <p>虚拟机分配内存：4GB</p>
 <p>虚拟机分配空间：50GB SSD</p>
 <p>1.​ 在虚拟机上安装Ubuntu 16.10;</p>
-<p><figure style="flex: 63.10861423220974" ><img width="337" height="267" src="/archives/assets/56e878e1ad4f3d6b9a9a69800f3e5bb1.jpeg" /></figure>1.png</p>
+<p><figure style="flex: 63.10861423220974" ><img width="337" height="267" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/56e878e1ad4f3d6b9a9a69800f3e5bb1.jpeg" /></figure>1.png</p>
 <p>2. 进入Ubuntu系统，更新软件源代码.</p>
 <p><em>sudo apt-get install update ​</em></p>
 <ol>
@@ -130,14 +130,14 @@
 <p><em>sudo apt-get install vim</em></p>
 <p>7.用Vim打开<em>/kernel/sys.c</em>文件，加入<em>linkage.h</em>的头文件,在文件末尾加入要加入的系统调用函数.</p>
 <p><em>sudo vim linux-4.11.6/kernel/sys.c</em></p>
-<p><figure style="flex: 129.40074906367042" ><img width="691" height="267" src="/archives/assets/f907d841a172d622a49a51d088672903.jpeg" /></figure>2.png</p>
-<p><figure style="flex: 83.48115299334812" ><img width="753" height="451" src="/archives/assets/1d6f1eb916cccf3171d164195441877d.jpeg" /></figure>3.png</p>
+<p><figure style="flex: 129.40074906367042" ><img width="691" height="267" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/f907d841a172d622a49a51d088672903.jpeg" /></figure>2.png</p>
+<p><figure style="flex: 83.48115299334812" ><img width="753" height="451" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/1d6f1eb916cccf3171d164195441877d.jpeg" /></figure>3.png</p>
 <p>8.加入系统调用函数声明。在<em>linux-4.11.6/arch/x86/include/asm/syscalls.h</em>中加入<em>asmlinkage void sys_quicksort(int [],int,int);</em></p>
 <p><em>sudo vim linux-4.11.6/arch/x86/include/asm/syscalls.h</em></p>
-<p><figure style="flex: 82.96460176991151" ><img width="750" height="452" src="/archives/assets/ac7c74ba2bbc9baf487b86d328a25123.jpeg" /></figure>4.png</p>
+<p><figure style="flex: 82.96460176991151" ><img width="750" height="452" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/ac7c74ba2bbc9baf487b86d328a25123.jpeg" /></figure>4.png</p>
 <p>9.加入系统调用号。在<em>linux-4.11.6/arch/x86/entry/syscalls/syscall_64.tbl</em></p>
 <p><em>sudo vim linux-4.11.6/arch/x86/entry/syscalls/syscall_64.tbl</em></p>
-<p><figure style="flex: 82.6710816777042" ><img width="749" height="453" src="/archives/assets/6fdc02c317e42d7bd4d4e62fa11f8fae.jpeg" /></figure>5.png</p>
+<p><figure style="flex: 82.6710816777042" ><img width="749" height="453" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/6fdc02c317e42d7bd4d4e62fa11f8fae.jpeg" /></figure>5.png</p>
 <p>10. 编译内核和安装内核.</p>
 <p><em>sudo make mrproper</em></p>
 <p><em>sudo make clean</em></p>
@@ -148,7 +148,7 @@
 <p><em>sudo make modules_install</em></p>
 <p><em>sudo make install</em></p>
 <p>13. 重启加载内核.</p>
-<p><figure style="flex: 65.0" ><img width="650" height="500" src="/archives/assets/5f2668cea8f20a99925771bb739e4687.jpeg" /></figure>6.png</p>
+<p><figure style="flex: 65.0" ><img width="650" height="500" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/5f2668cea8f20a99925771bb739e4687.jpeg" /></figure>6.png</p>
 <p>14. 编写程序验证系统调用.</p>
 <p><em>#include\&lt;stdio.h&gt;</em></p>
 <p><em>#define QUICK_SORT 334</em></p>
@@ -165,7 +165,7 @@
 <p>15. 编译C程序:</p>
 <p>gcc -o test test.c</p>
 <p>./test</p>
-<p><figure style="flex: 195.12820512820514" ><img width="761" height="195" src="/archives/assets/1d815ad92d54c65da9435dd9e1c0007c.jpeg" /></figure></p>
+<p><figure style="flex: 195.12820512820514" ><img width="761" height="195" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/1d815ad92d54c65da9435dd9e1c0007c.jpeg" /></figure></p>
 <p>.调用成功！</p>
 <h2>实验结果分析</h2>
 <p>1、熟悉并记录命令执行结果。</p>
@@ -227,14 +227,14 @@
                     <script>
                         var site_build_date = "2019-12-18T16:51+08:00"
                     </script>
-                    <script src="/assets/galileo-dc4baa7cf4.js"></script>
+                    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/galileo-dc4baa7cf4.js"></script>
                 </footer>
             </div>
         </div>
     </div>
 
     <!--katex-->
-    <script defer src="/assets/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/katex.min.js"></script>
     <script>
     mathOpts = {
         delimiters: [
@@ -245,10 +245,10 @@
         ]
     };
     </script>
-    <script defer src="/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
 
-    <script src="/assets/ExSearch/jquery.min.js"></script>
-    <script src="/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
 
     
     </body>

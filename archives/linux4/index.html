@@ -11,15 +11,15 @@
     <meta name="template" content="Galileo" />
     <link rel="alternate" type="application/rss+xml" title="Ricardoz's Site &raquo; RSS 2.0" href="/feed/index.xml" />
     <link rel="alternate" type="application/atom+xml" title="Ricardoz's Site &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
-    <link rel="stylesheet" href="/assets/galileo-3f4dcc35c9.css">
-    <link rel="stylesheet" href="/assets/ExSearch/ExSearch-182e5a8868.css">
-    <link rel="stylesheet" href="/assets/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/galileo-3f4dcc35c9.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/katex.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "/2810800c5bdb51529140510dbbeae4ea.json"
+            api: "https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/2810800c5bdb51529140510dbbeae4ea.json"
         }
     </script>
     
@@ -109,14 +109,14 @@ struct timeval it_value; /*当前时间计数*/<br>
 <p>it_interval用来指定每隔多长时间执行任务， it_value用来保存当前时间离执行任务还有多长时间。比如说， 你指定it_interval为2秒(微秒为0)，开始的时候我们把it_value的时间也设定为2秒（微秒为0），当过了一秒， it_value就减少一个为1， 再过1秒，则it_value又减少1，变为0，这个时候发出信号（告诉用户时间到了，可以执行任务了），并且系统自动把it_value的时间重置为it_interval的值，即2秒，再重新计数。</p>
 <p>我们的实验是使用Linux定时器，来检测进程的运行时间</p>
 <p><strong>必要的头文件</strong></p>
-<p><figure style="flex: 128.41726618705036" ><img width="357" height="139" src="/archives/assets/bf7ed7b9eba7409afeb7edcb72d611df.png" /></figure></p>
+<p><figure style="flex: 128.41726618705036" ><img width="357" height="139" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/bf7ed7b9eba7409afeb7edcb72d611df.png" /></figure></p>
 <p><strong>参考代码：</strong></p>
 <p><strong>Main函数：</strong></p>
-<p><figure style="flex: 42.06939281288724" ><img width="679" height="807" src="/archives/assets/c70ff37fea7b4b345faac42afbfc1b9c.png" /></figure></p>
+<p><figure style="flex: 42.06939281288724" ><img width="679" height="807" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/c70ff37fea7b4b345faac42afbfc1b9c.png" /></figure></p>
 <p><strong>信号处理函数：</strong></p>
-<p><figure style="flex: 125.44910179640719" ><img width="838" height="334" src="/archives/assets/44d595718024874c0e052fe627232c4f.png" /></figure></p>
+<p><figure style="flex: 125.44910179640719" ><img width="838" height="334" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/44d595718024874c0e052fe627232c4f.png" /></figure></p>
 <p><strong>发送Alarm信号给进程</strong></p>
-<p><figure style="flex: 98.62068965517241" ><img width="858" height="435" src="/archives/assets/73fd9fae816da948bd7a0a252d27a70a.png" /></figure></p>
+<p><figure style="flex: 98.62068965517241" ><img width="858" height="435" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/73fd9fae816da948bd7a0a252d27a70a.png" /></figure></p>
 <h2>实验结果分析</h2>
 <p>1、熟悉并记录命令执行结果。</p>
 <p>2、写出自己的心得体会。3. 实验报告仅提供封面，不提供正文模板。实验报告要求如下：</p>
@@ -178,14 +178,14 @@ struct timeval it_value; /*当前时间计数*/<br>
                     <script>
                         var site_build_date = "2019-12-18T16:51+08:00"
                     </script>
-                    <script src="/assets/galileo-dc4baa7cf4.js"></script>
+                    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/galileo-dc4baa7cf4.js"></script>
                 </footer>
             </div>
         </div>
     </div>
 
     <!--katex-->
-    <script defer src="/assets/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/katex.min.js"></script>
     <script>
     mathOpts = {
         delimiters: [
@@ -196,10 +196,10 @@ struct timeval it_value; /*当前时间计数*/<br>
         ]
     };
     </script>
-    <script defer src="/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
 
-    <script src="/assets/ExSearch/jquery.min.js"></script>
-    <script src="/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
 
     
     </body>
