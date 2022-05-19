@@ -23,19 +23,20 @@
         }
     </script>
     
-<title>标签: Typography - Ricardoz's Site</title>
+<title>Linux实验3 - Ricardoz's Site</title>
 <meta name="author" content="华仔仔" />
-<meta name="description" content="凌晨四点，我看海棠花未眠。" />
-<meta property="og:title" content="标签: Typography - Ricardoz's Site" />
-<meta property="og:description" content="凌晨四点，我看海棠花未眠。" />
+<meta name="description" content="Linux实验3" />
+<meta property="og:title" content="Linux实验3 - Ricardoz's Site" />
+<meta property="og:description" content="Linux实验3" />
 <meta property="og:site_name" content="Ricardoz's Site" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/tag/Typography/" />
-<meta property="og:image" content="Ricardoz's Site" />
-<meta name="twitter:title" content="标签: Typography - Ricardoz's Site" />
-<meta name="twitter:description" content="凌晨四点，我看海棠花未眠。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/linux3/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2022-05-19T16:50:00-00.00" />
+<meta name="twitter:title" content="Linux实验3 - Ricardoz's Site" />
+<meta name="twitter:description" content="Linux实验3" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="/logo.png" />
+<meta name="twitter:image" content="" />
 
 
     
@@ -63,27 +64,78 @@
             <div class="wrapper">
                 
 <main>    
-    
+    <section class="ga-section ga-content">
+        <article class="yue">
+            <h1 class="ga-post_title">Linux实验3</h1>
+            <span class="ga-post_meta ga-mono">
+                <span>华仔仔</span>
+                <time>
+                    2022-05-19
+                </time>
+                
+                in <a no-style class="category" href="/category/Linux/">
+                    Linux
+                </a>
+                
+                
+            </span>
+            <div class="ga-content_body">
+                <p><strong>实验目的和要求：</strong></p>
+<p>1结合Linux系统调用进一步理解malloc2 学习内核模块编程技术3理解并实践内存缺页相关知识</p>
+<p><strong>实验条件：</strong></p>
+<p>1、装有Linux操作系统的微型计算机；</p>
+<h2>实验过程</h2>
+<p>1 操作系统的发展使得系统完成了大部分的内存管理工作。对于程序员而言，这些内存管理的过程完全透明不可见。因此，程序员开发时从不关心系统如何为自己分配内存，而且永远认为系统可以分配给程序所需要的内存。在程序开发时，程序员真正需要做的就是：申请内存、使用内存、释放内存，其他一概无需过问。</p>
+<p><figure style="flex: 81.80039138943249" ><img width="836" height="511" src="/archives/assets/4cf30bdab0ed56995321a1e2f10873ce.png" /></figure></p>
+<h4>在Linux 下，用malloc（）函数实现cat或copy命令。<figure style="flex: 90.08838383838383" ><img width="1427" height="792" src="/archives/assets/5cd3a4cd45581bd6cb003408f75c67a3.png" /></figure>实验2：编程环境</h4>
+<p>Ubuntu 16.04 LTS</p>
+<h4>什么是模块</h4>
+<p>内核模块的全称是动态可加载内核模块(Loadable Kernel Modul,KLM)，可以动态载入内核，让它成为内核代码的一部分。</p>
+<p>一个模块一般由一组函数和数据结构组成。</p>
+<p><strong>hello.c代码</strong>如下</p>
+<p><figure style="flex: 97.58687258687259" ><img width="1011" height="518" src="/archives/assets/9068ddb885c5e6387b0cd751546e5544.png" /></figure> <strong>Makefile代码</strong>如下</p>
+<p>在<figure style="flex: 128.81944444444446" ><img width="742" height="288" src="/archives/assets/5ad08ff5258a891645dad5fe9586636a.png" /></figure></p>
+<p>在命令行输入：</p>
+<p><figure style="flex: 323.75" ><img width="1036" height="160" src="/archives/assets/60aff83a774de1a6db09219150ae580c.png" /></figure></p>
+<p>观察CR3寄存器</p>
+<p><figure style="flex: 83.44051446945338" ><img width="1038" height="622" src="/archives/assets/27c36f9e1fcc8961ae3dbe1ff12a03a7.png" /></figure></p>
+<p><strong>  </strong></p>
+<h2>实验结果分析</h2>
+<p>1、熟悉并记录命令执行结果。</p>
+<p>2、写出自己的心得体会。3. 实验报告仅提供封面，不提供正文模板。实验报告要求如下：</p>
+<p>1）至少包含实验过程、实验结果、选择部分度量项目对结果进行简要解释。</p>
+<p>2）报告章节要组织合理。</p>
+<p><strong>核心思想是：根据参考案例，结合教材，了解makefile。结合操作系统的知识，解读最后一个案例中cr3的返回值，并撰写实验报告。</strong></p>
 
-<section id="ga-archive_list" class="ga-section" data-title="#Typography">
-    <ul>
-        
-        <li>
-            <h1><a target="_self" class="ga-highlight" href="/archives/typography/">Hello World!</a></h1>
-            <time class="ga-mono" datetime="2019-12-18T16:50:00-00.00">
-                2019-12-18
-            </time>
-        </li>
-        
-    </ul>
+            </div>
+        </article>
+        <div id="ga-tags">
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/Linux/">#Linux</a>
+    </span>
+    
+</div>
+    </section>
+
+    
+<section id="ga-content_pager">
+
+    <div class="next">
+        <h3>没有了</h3>
+        <p class="yue">这是最新的文章</p>
+    </div>
+
+
+    <div class="prev">
+        <a class="ga-highlight" href="/archives/linux/">Linux实验2</a>
+        <p class="yue">Linux实验2</p>
+    </div>
+
 </section>
 
-<section class="ga-section ga-mono" id="ga-pager">
-    
-    <span>Page 1 of 1</span>
-    
-</section>
 
+    
 
 </main>
 
