@@ -24,9 +24,9 @@ excerpt: Linux实验3
 
 1 操作系统的发展使得系统完成了大部分的内存管理工作。对于程序员而言，这些内存管理的过程完全透明不可见。因此，程序员开发时从不关心系统如何为自己分配内存，而且永远认为系统可以分配给程序所需要的内存。在程序开发时，程序员真正需要做的就是：申请内存、使用内存、释放内存，其他一概无需过问。
 
-![](media/4aa38c3284401b1a3749185df568cd3a.png)
+![](images/4aa38c3284401b1a3749185df568cd3a.png)
 
-#### 在Linux 下，用malloc（）函数实现cat或copy命令。![](media/48eb512a861c98e380acb171475c5c9c.png)实验2：编程环境
+#### 在Linux 下，用malloc（）函数实现cat或copy命令。![](images/48eb512a861c98e380acb171475c5c9c.png)实验2：编程环境
 
 Ubuntu 16.04 LTS
 
@@ -38,17 +38,17 @@ Ubuntu 16.04 LTS
 
 **hello.c代码**如下
 
-![](media/5fe6ea85ad6725a78da6f9694515208c.png) **Makefile代码**如下
+![](images/5fe6ea85ad6725a78da6f9694515208c.png) **Makefile代码**如下
 
-在![](media/900d450c076e6534968cf4bcd23a9634.png)
+在![](images/900d450c076e6534968cf4bcd23a9634.png)
 
 在命令行输入：
 
-![](media/388f175eff65d94bc81b7b39015d322e.png)
+![](images/388f175eff65d94bc81b7b39015d322e.png)
 
 观察CR3寄存器
 
-![](media/ed3bf7f06a5b76947f0ff310fe0e13b0.png)
+![](images/ed3bf7f06a5b76947f0ff310fe0e13b0.png)
 
 **  
 **
