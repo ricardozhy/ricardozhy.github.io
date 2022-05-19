@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux实验3
-slug: linux
+slug: linux3
 date: 2022-05-19 16:50
 status: publish
 author: 华仔仔
