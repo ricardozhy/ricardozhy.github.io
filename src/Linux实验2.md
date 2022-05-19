@@ -26,7 +26,7 @@ excerpt: Linux实验2
 
 Liunx进程创建
 
-**![](media/1.png)**
+**![](images/1.png)**
 
 **![](media/2.png)**
 
