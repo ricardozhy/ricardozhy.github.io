@@ -1,174 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ricardoz's Site</title><link>/</link><description>凌晨四点，我看海棠花未眠。</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/logo.png</url><title>Ricardoz's Site</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 23 May 2022 17:11:31 +0806</lastBuildDate><pubDate>Mon, 23 May 2022 17:11:31 +0806</pubDate><item><title>Linux常用命令</title><link>/archives/linux/</link><description>&lt;p&gt;Linux常用命令
-欢迎交流GitHub：Ricardo-Zzhao @&lt;a href="https://github.com/Ricardo-Zzhao"&gt;https://github.com/Ricardo-Zzhao&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;邮箱：ricardoz_y@qq.com&lt;/p&gt;
-&lt;p&gt;博客：&lt;a href="https://mblog.ricardoz.site"&gt;Ricardoz's Site&lt;/a&gt;&lt;/p&gt;
-&lt;h1&gt;（1）指令名称：pwd&lt;/h1&gt;
-&lt;p&gt;pwd命令也是最常用最基本的命令之一，用于显示用户当前所在的目录。&lt;/p&gt;
-&lt;p&gt;&lt;figure style="flex: 280.4878048780488" &gt;&lt;img width="460" height="82" src="https://img-blog.csdnimg.cn/9d99f7e0ba154ae3959b49270b25f2c5.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（2）指令名称：cd&lt;/h1&gt;
-&lt;p&gt;cd命令不仅显示当前状态，还改变当前状态，它的用法跟dos下的cd命令基本一致。 
-cd ..可进入上一层目录 
-cd -可进入上一个进入的目录 
-cd ~可进入用户的home目录
-&lt;figure style="flex: 178.94736842105263" &gt;&lt;img width="408" height="114" src="https://img-blog.csdnimg.cn/f2e51629b7104d0bb4d6a0cccab0e1d3.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（3）指令名称：cp&lt;/h1&gt;
-&lt;p&gt;使用方式： 
-cp [options] source dest 
-cp [options] source... directory 
-说明：将一个档案拷贝至另一档案，或将数个档案拷贝至另一目录。&lt;/p&gt;
-&lt;p&gt;范例： 
-将档案 aaa 复制(已存在)，并命名为 bbb : 
-cp aaa bbb 
-将所有的C语言程式拷贝至 Finished 子目录中 : 
-cp *.c Finished
-&lt;figure style="flex: 345.39473684210526" &gt;&lt;img width="525" height="76" src="https://img-blog.csdnimg.cn/d1aa4842d7c14bce9a82af050c2ccac3.png#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 196.61654135338347" &gt;&lt;img width="523" height="133" src="https://img-blog.csdnimg.cn/0984f607d2c7473394d8300d681cb2ad.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（4）名称：mv&lt;/h1&gt;
-&lt;p&gt;使用方式：mv [options] source dest 
-mv [options] source... directory 
-说明：将一个档案移至另一档案，或将数个档案移至另一目录。 
-参数：-i 若目的地已有同名档案，则先询问是否覆盖旧档。 
-范例： 
-将档案 aaa 更名为 bbb : 
-mv aaa bbb 
-将所有的C语言程序移至 Finished 子目录中 : 
-mv -i *.c /Finished&lt;/p&gt;
-&lt;p&gt;&lt;figure style="flex: 134.4262295081967" &gt;&lt;img width="492" height="183" src="https://img-blog.csdnimg.cn/bbe43586652c438d971cc4571b6d78c7.png#pic_center" /&gt;&lt;figcaption&gt;在这里插入图片描述&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（5）指令名称 : chmod&lt;/h1&gt;
-&lt;p&gt;使用方式 : chmod [-cfvR] [--help] [--version] mode file... 
-说明 : Linux/Unix 的档案存取权限分为三级 : 档案拥有者、群组、其他。利用 chmod 可以藉以控制档案如何被他人所存取。&lt;/p&gt;
-&lt;p&gt;mode : 权限设定字串，格式如下 : [ugoa...][+-=][rwxX]...][,...]，其中u 表示该档案的拥有者，g 表示与该档案的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;表示增加权限、- 表示取消权限、= 表示唯一设定权限。
-r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该档案是个子目录或者该档案已经被设定过为可执行。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;范例 :将档案 file1.txt 设为所有人皆可读取 : 
-chmod ugo+r file1.txt 
-将档案 file1.txt 设为所有人皆可读取 : 
-chmod a+r file1.txt 
-将档案 file1.txt 与 file2.txt 设为该档案拥有者，与其所属同一个群体者可写入，但其他以外的人则不可写入 : 
-chmod ug+w,o-w file1.txt file2.txt 
-将 ex1.py 设定为只有该档案拥有者可以执行 : 
-chmod u+x ex1.py 
-将目前目录下的所有档案与子目录皆设为任何人可读取 : 
-chmod -R a+r * 
-此外chmod也可以用数字来表示权限如 chmod 777 file 
-语法为：chmod abc file 
-其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。
-r=4，w=2，x=1 
-若要rwx属性则4+2+1=7； 
-若要rw-属性则4+2=6；
-若要r-x属性则4+1=7。
-范例： 
-chmod a=rwx file        和    chmod 777 file    效果相同 
-chmod ug=rwx,o=x file   和    chmod 771 file    效果相同 
-若用chmod 4755 filename可使此程式具有root的权限
-&lt;figure style="flex: 258.7628865979381" &gt;&lt;img width="502" height="97" src="https://img-blog.csdnimg.cn/69feb178745844c994d52abed69fb58b.png#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 542.7083333333334" &gt;&lt;img width="521" height="48" src="https://img-blog.csdnimg.cn/4825ca2fa75f403db774c1d47a97484e.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（6）指令名称 : ls&lt;/h1&gt;
-&lt;p&gt;使用方式 : ls [-alrtAFR] [name...] 
-说明 : 显示指定工作目录下之内容（列出目前工作目录所含之档案及子目录)。&lt;/p&gt;
-&lt;p&gt;范例： 
-列出目前工作目录下所有名称是 s 开头的档案，愈新的排愈后面 : 
-ls -ltr s&lt;em&gt; 
-将 /bin 目录以下所有目录及档案详细资料列出 : 
-ls -lR /bin 
-列出目前工作目录下所有档案及目录；目录于名称后加 "/", 可执行档于名称后加 "&lt;/em&gt;" : 
-ls -AF 
-&lt;figure style="flex: 168.4971098265896" &gt;&lt;img width="583" height="173" src="https://img-blog.csdnimg.cn/5a77d2e6dc28484b8b11ba486a732814.png#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 306.06060606060606" &gt;&lt;img width="606" height="99" src="https://img-blog.csdnimg.cn/d86fe5ce452a4dc4b4a21bc273027457.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（7）指令名称：rm&lt;/h1&gt;
-&lt;p&gt;使用方式：rm [options] name... 
-说明：删除档案及目录。&lt;/p&gt;
-&lt;p&gt;范例：
-删除所有C语言程式档；删除前逐一询问确认 : 
-rm -i *.c 
-将 Finished 子目录及子目录中所有档案删除 : 
-rm -r Finished 
-&lt;figure style="flex: 420.90909090909093" &gt;&lt;img width="463" height="55" src="https://img-blog.csdnimg.cn/0bdaaaf06ef241d29d9d60d8274c14c0.png#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 437.0689655172414" &gt;&lt;img width="507" height="58" src="https://img-blog.csdnimg.cn/03a5ff4b319b45db9c5e6d23b5f309ac.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（8）指令名称：rmdir&lt;/h1&gt;
-&lt;p&gt;使用方式： rmdir [-p] dirName 
-说明： 删除空的目录。 
-参数： -p 是当子目录被删除后使它也成为空目录的话，则顺便一并删除。 
-范例： 
-将工作目录下，名为 AAA 的子目录删除 : 
-rmdir AAA 
-在工作目录下的 BBB 目录中，删除名为 Test 的子目录。若 Test 删除后，BBB 目录成为空目录，则 BBB 亦予删除。 
-rmdir -p BBB/Test&lt;/p&gt;
-&lt;p&gt;&lt;figure style="flex: 421.9298245614035" &gt;&lt;img width="481" height="57" src="https://img-blog.csdnimg.cn/703e692640694e6892618c45923bdb68.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（9）指令名称：touch&lt;/h1&gt;
-&lt;p&gt;使用方式： 
-touch [-acfm] 
-[-r reference-file] [--file=reference-file] 
-[-t MMDDhhmm[CC]YY][.ss] 
-[-d time] [--date=time] [--time={atime,access,use,mtime,modify}]
-[--no-create] [--help] [--version] 
-file1 [file2 ...] 
-说明：
-touch 指令改变档案的时间记录。 ls -l 可以显示档案的时间记录。
-&lt;figure style="flex: 103.05755395683454" &gt;&lt;img width="573" height="278" src="https://img-blog.csdnimg.cn/ea8a4a8a30cc4ca692887eca1cdf9824.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmljYXJkb1p6eno=,size_16,color_FFFFFF,t_70,g_se,x_16#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（10）指令名称：gzip&lt;/h1&gt;
-&lt;p&gt;说明：gzip命令用于压缩文件。 
-参数 ： -d 将压缩文件解压
-范例：
-如果要将ye.txt文件压缩，可用如下命令： 
-gzip ye.txt 
-这样就可以压缩文件并在文件名后面加上gz扩展名，变成文件ye.txt.gz。 
-解压缩文件可用gzip -d命令实现： 
-gzip -d ye.txt.gz 
-这样就可以解压缩文件并删除gz扩展名。&lt;/p&gt;
-&lt;p&gt;&lt;figure style="flex: 428.44827586206895" &gt;&lt;img width="497" height="58" src="https://img-blog.csdnimg.cn/248a7cdddbad4bba8aff7d8d1e26a2aa.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（11）指令名称：tar&lt;/h1&gt;
-&lt;p&gt;说明：tar可以为文件和目录创建档案。利用tar，用户可以为某一特定文件创建档案（备份文件），也可以在档案中改变文件，或者向档案中加入新的文件。tar最初被用来在磁带上创建档案，现在，用户可以在任何设备上创建档案，如软盘。利用tar命令，可以把一大堆的文件和目录全部打包成一个文件，这对于备份文件或将几个文件组合成为一个文件以便于网络传输是非常有用的。&lt;/p&gt;
-&lt;p&gt;范例：
-可用如下方法建立tar档案： 
-tar cvf 
-例如，如果要将当前目录中所有文件存档到ye.tar中，可用如下命令： 
-tar cvf ye.tar &lt;em&gt;.&lt;/em&gt; 
-要浏览档案内容，将c选项变成t。如果要浏览ye.tar档案中的内容，可用如下命令： 
-tar tvf ye.tar 
-要取出档案内的内容，将c选项变成x。如果要将ye.tar档案中的内容取到当前目录中，可用如下命令： 
-tar xvf ye.tar&lt;/p&gt;
-&lt;p&gt;新版的tar可以直接访问和建立gzip压缩的tar档案，只要在tar命令中加上z 选项就可以了。例如： 
-生成压缩档案ye.tar.gz ：
-tar czvf ye.tar &lt;em&gt;.txt 
-显示压缩档案ye.tar.gz的内容：
-tar tzvf ye.tar &lt;/em&gt;.txt 
-取出压缩档案ye.tar.gz的内容：
-tar xzvf ye.tar *.txt 
-&lt;figure style="flex: 91.69329073482429" &gt;&lt;img width="574" height="313" src="https://img-blog.csdnimg.cn/d6ce5175e26a463a8d6d27344180b1dd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmljYXJkb1p6eno=,size_16,color_FFFFFF,t_70,g_se,x_16#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 119.37984496124031" &gt;&lt;img width="616" height="258" src="https://img-blog.csdnimg.cn/38d58471b7ba4614bf12125c96bf5639.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmljYXJkb1p6eno=,size_17,color_FFFFFF,t_70,g_se,x_16#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（12）指令名称：mail&lt;/h1&gt;
-&lt;p&gt;使用方式：mail [-iInv] [-s subject] [-c cc-addr] [-b bcc-addr] user1 [user 2 ...] 
-说明： 
-mail 不仅只是一个指令， mail 还是一个电子邮件程序。&lt;/p&gt;
-&lt;p&gt;参数：
-s 邮件标题 
-c 邮件地址 （2个地址以上用，一个地址不用加此参数）&lt;/p&gt;
-&lt;p&gt;范例： 
-①将信件送给一个或以上的电子邮件地址，由于没有加入其他的选项，使用者必须输入标题与信件的内容等。
-mail user01@mcs.njnu.edu.cn
-系统会提示输入“subject”
-②将 mail.txt 的内容寄给yzhu@mcs.hpc.njnu.edu.cn ，同时抄送给root@mcs.hpc.njnu.edu.cn
-mail -s “标题” -c yzhu@mcs.hpc.njnu.edu.cn  root@mcs.hpc.njnu.edu.cn &amp;lt;  mail.txt 
-接收到的邮件都保存在目录 /var/spool/mail/用户名&lt;/p&gt;
-&lt;p&gt;&lt;figure style="flex: 335.2040816326531" &gt;&lt;img width="657" height="98" src="https://img-blog.csdnimg.cn/4587efbbb7e74d0ba2e80bf51d7582f9.png#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 155.0" &gt;&lt;img width="713" height="230" src="https://img-blog.csdnimg.cn/3185aea2a4ed4a7097113a5528dac893.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmljYXJkb1p6eno=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 121.8213058419244" &gt;&lt;img width="709" height="291" src="https://img-blog.csdnimg.cn/cf4de1453333475bba8315cf53e5abcc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmljYXJkb1p6eno=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（13）指令名称 : wall （选做）&lt;/h1&gt;
-&lt;p&gt;使用方式 :
-wall [ message ] 
-使用说明： 
-wall 会将讯息传给每一个 mesg 设定为 yes 的上线使用者。
-例子 :
-传讯息"hi" 给每一个使用者 : 
-wall hi
-&lt;figure style="flex: 127.5" &gt;&lt;img width="867" height="340" src="https://img-blog.csdnimg.cn/2733f03cd0554a308b87e8abd2ec72e5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmljYXJkb1p6eno=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（13）感悟&lt;/h1&gt;
-&lt;p&gt;做完本次实验感觉还是有很多的收货的，原本对这些操作只是有点映像，现在对于这些操作更加的得心应手了，知道了mail和wall的用法，同时老师让我们看more，CJSON的源码，感觉对这些还是有点难度的，有点看不懂，希望在以后的学习中能过加强对这些的理解。&lt;/p&gt;
-</description><author>hi@imalan.cn (华仔仔)</author><guid isPermaLink="true">/archives/linux/</guid><pubDate>Thu, 24 Mar 2022 16:40:00 +0806</pubDate></item><item><title>识途</title><link>/archives/shitu/</link><description>&lt;p&gt;妍望着手中初成的画稿，露出了连日来的第一个微笑……&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ricardoz's Site</title><link>/</link><description>凌晨四点，我看海棠花未眠。</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/logo.png</url><title>Ricardoz's Site</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 23 May 2022 17:17:33 +0806</lastBuildDate><pubDate>Mon, 23 May 2022 17:17:33 +0806</pubDate><item><title>识途</title><link>/archives/shitu/</link><description>&lt;p&gt;妍望着手中初成的画稿，露出了连日来的第一个微笑……&lt;/p&gt;
 &lt;p&gt;红，满目的红。红绸，红幔，红纱，红烛，还有着红衣的女子，一如她出嫁，他出征的那日。&lt;/p&gt;
 &lt;p&gt;峨眉轻扫，朱砂点唇，素手挽发，眉目轻阖，敛去眸中的一丝忧愁，“刷——”灯盏亮起，点点火光映得女子素来清冷的眸子中也染上了几分暖色。东方尚未破晓，萦着湿冷气息的晨雾中，女子的身影慢慢向城门外移动着。风声烈烈，卷起漫漫黄沙，女子手提灯盏，任风卷起衣袂翩飞，身形丝毫未变，目光也始终落在不见半点人影的远方。就是今天了，今天是战胜的军队归来的日子。……&lt;/p&gt;
 &lt;p&gt;妍望着这部名为《识途》的影片，眼中盈着点点星辉。&lt;/p&gt;
@@ -449,4 +280,143 @@ struct timeval it_value; /*当前时间计数*/&lt;br&gt;
 &lt;p&gt;1）至少包含实验过程、实验结果、选择部分度量项目对结果进行简要解释。&lt;/p&gt;
 &lt;p&gt;2）报告章节要组织合理。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;核心思想是：使用man手册，详细分析stty的数据结构，并改良第一个实验，实现根据输入参数，确定tty设备的回显打开与关闭。&lt;/strong&gt;&lt;/p&gt;
-</description><author>hi@imalan.cn (华仔仔)</author><guid isPermaLink="true">/archives/linux8/</guid><pubDate>Thu, 19 May 2022 16:58:00 +0806</pubDate></item></channel></rss>
+</description><author>hi@imalan.cn (华仔仔)</author><guid isPermaLink="true">/archives/linux8/</guid><pubDate>Thu, 19 May 2022 16:58:00 +0806</pubDate></item><item><title>webshell</title><link>/archives/webshell/</link><description>&lt;h2&gt;写在前面&lt;/h2&gt;
+&lt;p&gt;首先为什么有这篇文章，因为我们一门课程的大作业，有一项是基于web的Linux远程访问系统，在这里我记录了这次大作业的全过程，欢迎大家前来交流。
+邮箱：ricardoz_y@qq.com
+服务地址：&lt;a href="https://mblog.ricardoz.site/webshell/"&gt;https://mblog.ricardoz.site/webshell/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;1.webshell的构建&lt;/h2&gt;
+&lt;p&gt;老师讲的是可以通过webssh然后访问浏览器就可以在网页里访问。然后我就想到了之前用的阿里云cloudshell，我可以用iframe将阿里云的cloudshell嵌入我自己的网页，那这样不就可以实现将自己的webshell发布在网上了吗。
+然后就发现你用iframe嵌入阿里云的cloudshell就会直接拒绝连接。之后去网上搜了搜，遇到这种情况一般是阿里云在技术层面上封锁了iframe方法。之后我就搜了cloudshell，发现提供cloudshell的不止阿里云一家。谷歌在2015就发布了cloudshell，我们阿里云的友商腾讯云也提供了cloudshell服务。现在去试试腾讯云的cloudshell，好耶，这次没有拒绝连接。而是获取不到cookie，这总比直接拒绝连接来的好。具体遇到的问题会写在最后，下面开始使用腾讯云提供的cloudshell来搭建一个基于web的Linux远程访问系统。&lt;/p&gt;
+&lt;h3&gt;1.1 腾讯云cloudshell&lt;/h3&gt;
+&lt;p&gt;&lt;figure  size-undefined&gt;&lt;img width="-1" height="-1" src="./images/05241.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;点击控制台&lt;/p&gt;
+&lt;p&gt;&lt;figure  size-undefined&gt;&lt;img width="-1" height="-1" src="./images/05242.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;点击cloudshell，可以看到如下的cloudshell&lt;/p&gt;
+&lt;p&gt;&lt;figure  size-undefined&gt;&lt;img width="-1" height="-1" src="./images/05243.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;我们要做的便是将腾讯云提供的cloudshell嵌入我们自己的web中&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://iaas.cloud.tencent.com/cloudshell"&gt;腾讯云cloudshell调用地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用iframe将这个网址嵌入自己的网页就好啦，不过我看网上说最好不要使用iframe，好像会影响网络安全&lt;/p&gt;
+&lt;p&gt;这是调用的代码&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;iframe&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;iframeContent&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;iframeContent&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;frameborder&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;https://iaas.cloud.tencent.com/cloudshell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;iframe&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;1.2 目录系统构建&lt;/h3&gt;
+&lt;p&gt;我一开始的想法是将老师提供给我们实验的指导书转换成html文件，然后使用框架将8个html写到一起，再做一下装饰。但是！这样做不是很丑吗，一是我不怎么会html语言，word自动转成的html让我感觉有点难以接受。二是我前段时间自己搭了一个博客，何不将实验指导书放进我的博客里面。使用统一的category将他们放在一起，还是用Markdown格式书写的，正好最近比较喜欢这个，何乐而不为呢。于是就有了我这个用来装指导书的category.&lt;/p&gt;
+&lt;p&gt;&lt;figure  size-undefined&gt;&lt;img width="-1" height="-1" src="./images/05244.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;至于如何搭建的这个博客可以看我的github，我也是fork的别人的&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate"&gt;fork网址&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;2.使用iframe框架集成目录系统和cloudssh&lt;/h2&gt;
+&lt;p&gt;关于如何使用iframe来集成2个及以上的网页，我是在csdn上看的一篇博客&lt;a href="https://blog.csdn.net/jzy1990/article/details/75806600"&gt;网址在这&lt;/a&gt;，我修改了一下页面布局，让它更加契合实验楼的风格。下面看看效果。&lt;/p&gt;
+&lt;p&gt;&lt;figure  size-undefined&gt;&lt;img width="-1" height="-1" src="./images/05245.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure  size-undefined&gt;&lt;img width="-1" height="-1" src="./images/05246.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这里已经将webshell部署在了github上，使用github pages静态托管，可以通过在浏览器输入&lt;a href="https://mblog.ricardoz.site/webshell/来访问，做到这里可以看到大作业到此算是完成了大部分，但是凡是都不是完美的，下面就来说说问题吧。"&gt;https://mblog.ricardoz.site/webshell/来访问，做到这里可以看到大作业到此算是完成了大部分，但是凡是都不是完美的，下面就来说说问题吧。&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;3.关于一些问题&lt;/h2&gt;
+&lt;p&gt;本次大作业实现的过程中遇到的问题，下面就统一说下，问题还是比较多的，尤其是不兼容的问题感觉会对本次大作业的评分造成很大的影响。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1)无法解决跨域问题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不能说无法解决，应该说我解决不了，通过和老师讨论，老师让我使用js强制写入cookie，我在网上搜了好多如何写js，用js的帖子，找到了不少有很多我看不懂的，其中一篇我觉得写的是我能看懂的，&lt;a href="https://juejin.cn/post/6844904099612196877"&gt;网址在这&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;里面写道有两种方法：1.使用Javascript API将以前通过&lt;code&gt;document.cookie=xxx&lt;/code&gt;的方式，修改为我们自定义的&lt;code&gt;setCookie&lt;/code&gt;方法来处理就可以了&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;setCookie&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;cookieString&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;canCrossSite&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;cookie&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;cookieString&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;canCrossSite&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;cookie&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;cookieString&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;; SameSite=None; Secure`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;2.通过请求头中携带&lt;code&gt;Set-Cookie&lt;/code&gt;的头信息，可以完成后端请求给浏览器设置&lt;code&gt;cookie&lt;/code&gt;，设置以后对于需要跨站请求的&lt;code&gt;cookie&lt;/code&gt;就符合我们的预期，例如：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;http&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nx"&gt;http&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createServer&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nx"&gt;req&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setHeader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Set-Cookie&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;key5=page2; SameSite=None; Secure&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;key6=page2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setHeader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Access-Control-Allow-Origin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;*&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;end&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;end&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}).&lt;/span&gt;&lt;span class="nx"&gt;listen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;3001&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;访问&lt;code&gt;http://localhost:3001/index&lt;/code&gt;以后可以发现，请求&lt;code&gt;cookie&lt;/code&gt;携带&lt;code&gt;key6=page2&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;http&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fs&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;server&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;http&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createServer&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;options&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;key&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;readFileSync&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;./key.pem&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;cert&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;readFileSync&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;./cert.pem&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nx"&gt;server&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;options&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;req&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;req&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;req&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;url&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;indexOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/index&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setHeader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Access-Control-Allow-Origin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;*&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;end&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;index&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setHeader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Set-Cookie&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;key5=abc; SameSite=None; Secure;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;key6=def;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setHeader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Access-Control-Allow-Origin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;*&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;end&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;end&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}).&lt;/span&gt;&lt;span class="nx"&gt;listen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;3001&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;访问&lt;code&gt;https://localhost:3001/index&lt;/code&gt;以后可以发现，请求&lt;code&gt;cookie&lt;/code&gt;携带&lt;code&gt;key5=page2&lt;/code&gt;和&lt;code&gt;key6=page2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后我的本次大作业是没有后端的，我只写了一个index.html文件，所以是不可能通过后端来修改的，只能通过前端来修改(也不是不可以写一个后端程序，在我的印象里用Django，flask，springboot都是可以的)，然后我就在我的代码里设置了这个js&lt;/p&gt;
+&lt;p&gt;&lt;figure  size-undefined&gt;&lt;img width="-1" height="-1" src="./images/05247.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;可能是我设置的有问题，但是我是真的不会写前端的东西，所以这个设置了还是和没设置一样，一打开就成了这个老样子&lt;/p&gt;
+&lt;p&gt;&lt;figure  size-undefined&gt;&lt;img width="-1" height="-1" src="./images/05248.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这句Missing cookie parameters我是真的看烦了，整了它一个星期还是没搞定。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2)一些产商无法使用iframe嵌入的问题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;阿里云的cloudshell使用iframe的时候就会出现xxx拒绝连接，网址：&lt;a href="https://shell.aliyun.com/，尝试代码如下"&gt;https://shell.aliyun.com/，尝试代码如下&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;iframe id="iframe" name="iframe" width="100%" height="100%" frameborder="0" src="https://shell.aliyun.com/" style="height:900px; width:100%;"&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;使用腾讯云的cloudshell，在iframe嵌入时就会遇到上面所说的Missing cookie parameters问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3)iframe布局不知道如何写&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;写iframe的时候，一开始只有想法，还不知道如何去实现，最后是参考了一遍博客，参考了人家写的框架，&lt;a href="https://blog.csdn.net/jzy1990/article/details/75806600"&gt;参考链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html xmlns=" "&amp;gt;
+
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset="utf-8" /&amp;gt;
+    &amp;lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&amp;gt;
+    &amp;lt;title&amp;gt;Home&amp;lt;/title&amp;gt;
+    &amp;lt;style&amp;gt;
+        #iframeTop{
+            width: 100%;
+            height: 70px;
+        }
+        #iframeLeft{
+            width: 15%;
+            height: 700px;
+            float: left;
+        }
+        #iframeContent{
+            width: 84%;
+            height: 700px;
+        }
+    &amp;lt;/style&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;div&amp;gt;
+    &amp;lt;iframe id="iframeTop" name="iframeTop" frameborder="0" src="view/top.html"&amp;gt;&amp;lt;/iframe&amp;gt;
+    &amp;lt;iframe id="iframeLeft" name="iframeLeft" frameborder="0" src="view/left.html"&amp;gt;&amp;lt;/iframe&amp;gt;
+    &amp;lt;iframe id="iframeContent" name="iframeContent" frameborder="0" src="view/content.html"&amp;gt;&amp;lt;/iframe&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;4.如何解决&lt;/h2&gt;
+&lt;p&gt;1）Chrome浏览器80-94可以通过设置禁用samesite属性&lt;/p&gt;
+&lt;p&gt;Chrome浏览器打开新选项卡，并在地址栏中分别输入&lt;/p&gt;
+&lt;p&gt;chrome ://flags//same-site-by-default-cookies&lt;/p&gt;
+&lt;p&gt;chrome ://flags//# cookies-without-same-site-must-be-secure&lt;/p&gt;
+&lt;p&gt;将这两项都设置成disable就可以啦&lt;/p&gt;
+&lt;p&gt;2）Chrome94以上设置了samesite属性默认打开，开发者无法手动设置none，所以Chrome94以上的浏览器是用不了了&lt;/p&gt;
+&lt;p&gt;3）Chrome80以下的应该是无需设置&lt;/p&gt;
+&lt;p&gt;4）使用火狐浏览器可以直接打开，无需设置&lt;/p&gt;
+&lt;p&gt;比较chrome和firefox的请求标头和响应标头：&lt;/p&gt;
+&lt;p&gt;firefox :在首次启动请求后，服务端返回会话id，然后为请求中的每个cookie带来会话id。&lt;/p&gt;
+&lt;p&gt;chrome :由于请求标头始终没有sessionId，且整个cookie为空，因此服务每次都无法接受sessionId，每次都重新分配session。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;还有一些关于cookie，session，token之间有什么关系和区别的知识&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1）cookie数据存放在客户的浏览器上，session数据放在服务器上。&lt;/p&gt;
+&lt;p&gt;2）cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗，考虑到安全应当使用session。&lt;/p&gt;
+&lt;p&gt;3）session会在一定时间内保存在服务器上，存储在服务器的数据会更加的安全，不容易被窃取。当访问增多，会比较占用你服务器的性能与资源，应当使用cookie。&lt;/p&gt;
+&lt;p&gt;4）单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。因此使用cookie只能存储一些小量的数据。&lt;/p&gt;
+&lt;p&gt;5）session和session_id：服务器会保存一份，可能保存到缓存/数据库/文件，session_id一般是随机字符串，要到服务器检索id的有效性。Session通过cookie存储session_id，然后具体的数据则是保存在session中。如果用户已经登录，则服务器会在cookie中保存一个session_id，下次再次请求的时候，会把该session_id携带上来，服务器根据session_id在session库中获取用户的session数据。&lt;/p&gt;
+&lt;p&gt;6）token：服务器不需要记录任何东西，每次都是一个无状态的请求，每次都是通过解密来验证是否合法。&lt;/p&gt;
+&lt;h2&gt;5.快速使用&lt;/h2&gt;
+&lt;p&gt;1）使用火狐浏览器或谷歌80以下打开&lt;a href="https://console.cloud.tencent.com/"&gt;腾讯云·控制台&lt;/a&gt;, 点击右上角工具，cloudshell。&lt;/p&gt;
+&lt;p&gt;2）打开&lt;a href="https://mblog.ricardoz.site/webshell/"&gt;我的webshell&lt;/a&gt;, 左边即为Linux编程实验指导书，右边为腾讯云提供的cloudshell。&lt;/p&gt;
+&lt;h2&gt;6.个人感悟&lt;/h2&gt;
+&lt;p&gt;在做大作业的时候，越做越到后面，越会忍不住的想，为什么要做这个基于web的Linux远程访问系统。是不想搭建Linux系统吗，显然不是的，一个工科学生谁会没有自己的Linux系统。是想做实验时方便点吗，显然我们使用分屏更简单呀。左边一个word，右边虚拟机这样用起来不是更方便吗？&lt;/p&gt;
+&lt;p&gt;这些想法在我看了一些提供学习的平台地方得到答案。我们做的这个基于web的Linux远程访问系统，不应该止步于此呀。为什么要将眼光局限于只能用来做Linux实验呢，我可以多做几个目录呀，学习算法，学习编程，学习c。当你忘了一些Linux操作的时候，打开webshell随手就能打起来了呀。甚至在高铁上想敲代码，走路的时候有好点子想试试呢。这不是很方便吗？&lt;/p&gt;
+&lt;p&gt;思止于此，内心对于做了一个几乎没有兼容性的，网页布局很差的webshell有了一些安慰。毕竟第一次做这个东西，很多东西都不是很了解，今后对于这个项目会定期维护的。后期将会加一些别的东西进去。&lt;/p&gt;
+</description><author>hi@imalan.cn (华仔仔)</author><guid isPermaLink="true">/archives/webshell/</guid><pubDate>Tue, 24 May 2022 01:11:00 +0806</pubDate></item></channel></rss>
