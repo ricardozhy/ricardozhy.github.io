@@ -21,6 +21,8 @@ excerpt: 基于web的Linux远程访问系统，Linux编程大作业
 
 服务地址：https://mblog.ricardoz.site/webshell/
 
+github：https://github.com/Ricardo-Zzhao/webshell
+
 ## 1.webshell的构建
 
 老师讲的是可以通过webssh然后访问浏览器就可以在网页里访问。然后我就想到了之前用的阿里云cloudshell，我可以用iframe将阿里云的cloudshell嵌入我自己的网页，那这样不就可以实现将自己的webshell发布在网上了吗。
