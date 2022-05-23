@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ricardoz's Site</title><link>/</link><description>凌晨四点，我看海棠花未眠。</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/logo.png</url><title>Ricardoz's Site</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 23 May 2022 17:33:37 +0806</lastBuildDate><pubDate>Mon, 23 May 2022 17:33:37 +0806</pubDate><item><title>识途</title><link>/archives/shitu/</link><description>&lt;p&gt;妍望着手中初成的画稿，露出了连日来的第一个微笑……&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ricardoz's Site</title><link>/</link><description>凌晨四点，我看海棠花未眠。</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/logo.png</url><title>Ricardoz's Site</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 23 May 2022 17:36:59 +0806</lastBuildDate><pubDate>Mon, 23 May 2022 17:36:59 +0806</pubDate><item><title>识途</title><link>/archives/shitu/</link><description>&lt;p&gt;妍望着手中初成的画稿，露出了连日来的第一个微笑……&lt;/p&gt;
 &lt;p&gt;红，满目的红。红绸，红幔，红纱，红烛，还有着红衣的女子，一如她出嫁，他出征的那日。&lt;/p&gt;
 &lt;p&gt;峨眉轻扫，朱砂点唇，素手挽发，眉目轻阖，敛去眸中的一丝忧愁，“刷——”灯盏亮起，点点火光映得女子素来清冷的眸子中也染上了几分暖色。东方尚未破晓，萦着湿冷气息的晨雾中，女子的身影慢慢向城门外移动着。风声烈烈，卷起漫漫黄沙，女子手提灯盏，任风卷起衣袂翩飞，身形丝毫未变，目光也始终落在不见半点人影的远方。就是今天了，今天是战胜的军队归来的日子。……&lt;/p&gt;
 &lt;p&gt;妍望着这部名为《识途》的影片，眼中盈着点点星辉。&lt;/p&gt;
@@ -284,6 +284,7 @@ struct timeval it_value; /*当前时间计数*/&lt;br&gt;
 &lt;p&gt;首先为什么有这篇文章，因为我们一门课程的大作业，有一项是基于web的Linux远程访问系统，在这里我记录了这次大作业的全过程，欢迎大家前来交流。&lt;/p&gt;
 &lt;p&gt;邮箱：ricardoz_y@qq.com&lt;/p&gt;
 &lt;p&gt;服务地址：&lt;a href="https://mblog.ricardoz.site/webshell/"&gt;https://mblog.ricardoz.site/webshell/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;github：&lt;a href="https://github.com/Ricardo-Zzhao/webshell"&gt;https://github.com/Ricardo-Zzhao/webshell&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;1.webshell的构建&lt;/h2&gt;
 &lt;p&gt;老师讲的是可以通过webssh然后访问浏览器就可以在网页里访问。然后我就想到了之前用的阿里云cloudshell，我可以用iframe将阿里云的cloudshell嵌入我自己的网页，那这样不就可以实现将自己的webshell发布在网上了吗。&lt;/p&gt;
 &lt;p&gt;然后就发现你用iframe嵌入阿里云的cloudshell就会直接拒绝连接。之后去网上搜了搜，遇到这种情况一般是阿里云在技术层面上封锁了iframe方法。之后我就搜了cloudshell，发现提供cloudshell的不止阿里云一家。谷歌在2015就发布了cloudshell，我们阿里云的友商腾讯云也提供了cloudshell服务。现在去试试腾讯云的cloudshell，好耶，这次没有拒绝连接。而是获取不到cookie，这总比直接拒绝连接来的好。具体遇到的问题会写在最后，下面开始使用腾讯云提供的cloudshell来搭建一个基于web的Linux远程访问系统。&lt;/p&gt;
