@@ -16,12 +16,15 @@ excerpt: webshell
 ## 写在前面
 
 首先为什么有这篇文章，因为我们一门课程的大作业，有一项是基于web的Linux远程访问系统，在这里我记录了这次大作业的全过程，欢迎大家前来交流。
+
 邮箱：ricardoz_y@qq.com
+
 服务地址：https://mblog.ricardoz.site/webshell/
 
 ## 1.webshell的构建
 
 老师讲的是可以通过webssh然后访问浏览器就可以在网页里访问。然后我就想到了之前用的阿里云cloudshell，我可以用iframe将阿里云的cloudshell嵌入我自己的网页，那这样不就可以实现将自己的webshell发布在网上了吗。
+
 然后就发现你用iframe嵌入阿里云的cloudshell就会直接拒绝连接。之后去网上搜了搜，遇到这种情况一般是阿里云在技术层面上封锁了iframe方法。之后我就搜了cloudshell，发现提供cloudshell的不止阿里云一家。谷歌在2015就发布了cloudshell，我们阿里云的友商腾讯云也提供了cloudshell服务。现在去试试腾讯云的cloudshell，好耶，这次没有拒绝连接。而是获取不到cookie，这总比直接拒绝连接来的好。具体遇到的问题会写在最后，下面开始使用腾讯云提供的cloudshell来搭建一个基于web的Linux远程访问系统。
 
 ### 1.1 腾讯云cloudshell
@@ -74,7 +77,8 @@ excerpt: webshell
 
 ![](./images/05246.png)
 
-这里已经将webshell部署在了github上，使用github pages静态托管，可以通过在浏览器输入https://mblog.ricardoz.site/webshell/来访问，做到这里可以看到大作业到此算是完成了大部分，但是凡是都不是完美的，下面就来说说问题吧。
+这里已经将webshell部署在了github上，使用github pages静态托管，可以通过在浏览器输入https://mblog.ricardoz.site/webshell/
+来访问，做到这里可以看到大作业到此算是完成了大部分，但是凡是都不是完美的，下面就来说说问题吧。
 
 
 
