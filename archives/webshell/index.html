@@ -19,7 +19,7 @@
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/3aa815278ddec1406f00c88c1e604dfa.json"
+            api: "https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/1705384e6f060f9caa373751842b717b.json"
         }
     </script>
     
@@ -116,40 +116,40 @@
 <p><strong>1)无法解决跨域问题</strong></p>
 <p>不能说无法解决，应该说我解决不了，通过和老师讨论，老师让我使用js强制写入cookie，我在网上搜了好多如何写js，用js的帖子，找到了不少有很多我看不懂的，其中一篇我觉得写的是我能看懂的，<a href="https://juejin.cn/post/6844904099612196877">网址在这</a></p>
 <p>里面写道有两种方法：1.使用Javascript API将以前通过<code>document.cookie=xxx</code>的方式，修改为我们自定义的<code>setCookie</code>方法来处理就可以了</p>
-<div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">setCookie</span><span class="p">(</span><span class="nx">cookieString</span><span class="p">,</span><span class="w"> </span><span class="nx">canCrossSite</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">cookieString</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">canCrossSite</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">cookieString</span><span class="si">}</span><span class="sb">; SameSite=None; Secure`</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">setCookie</span><span class="p">(</span><span class="nx">cookieString</span><span class="p">,</span><span class="w"> </span><span class="nx">canCrossSite</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">cookieString</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">canCrossSite</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">cookieString</span><span class="si">}</span><span class="sb">; SameSite=None; Secure`</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 <p>2.通过请求头中携带<code>Set-Cookie</code>的头信息，可以完成后端请求给浏览器设置<code>cookie</code>，设置以后对于需要跨站请求的<code>cookie</code>就符合我们的预期，例如：</p>
-<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Set-Cookie&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;key5=page2; SameSite=None; Secure&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;key6=page2&#39;</span><span class="p">]);</span><span class="w"></span>
-<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3001</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+<span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Set-Cookie&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;key5=page2; SameSite=None; Secure&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;key6=page2&#39;</span><span class="p">]);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3001</span><span class="p">);</span>
 </pre></div>
 <p>访问<code>http://localhost:3001/index</code>以后可以发现，请求<code>cookie</code>携带<code>key6=page2</code></p>
-<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">;</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;./key.pem&#39;</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="nx">cert</span><span class="o">:</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;./cert.pem&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-<span class="nx">server</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;/index&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Set-Cookie&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;key5=abc; SameSite=None; Secure;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;key6=def;&#39;</span><span class="p">]);</span><span class="w"></span>
-<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3001</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;./key.pem&#39;</span><span class="p">),</span>
+<span class="w">    </span><span class="nx">cert</span><span class="o">:</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;./cert.pem&#39;</span><span class="p">)</span>
+<span class="p">};</span>
+<span class="nx">server</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;/index&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Set-Cookie&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;key5=abc; SameSite=None; Secure;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;key6=def;&#39;</span><span class="p">]);</span>
+<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3001</span><span class="p">);</span>
 </pre></div>
 <p>访问<code>https://localhost:3001/index</code>以后可以发现，请求<code>cookie</code>携带<code>key5=page2</code>和<code>key6=page2</code></p>
 <p>然后我的本次大作业是没有后端的，我只写了一个index.html文件，所以是不可能通过后端来修改的，只能通过前端来修改(也不是不可以写一个后端程序，在我的印象里用Django，flask，springboot都是可以的)，然后我就在我的代码里设置了这个js</p>
@@ -241,8 +241,8 @@
 <section id="ga-content_pager">
 
     <div class="next">
-        <h3>没有了</h3>
-        <p class="yue">这是最新的文章</p>
+        <a class="ga-highlight" href="/archives/shanghai/">上海小记·风景篇</a>
+        <p class="yue">上海小记</p>
     </div>
 
 
@@ -265,7 +265,7 @@
                     </section>
                     <section>
                         <p class="copyright">
-                            <span>Copyright © 2022 华仔仔</span>
+                            <span>Copyright © 2024 华仔仔</span>
                             <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
                         </p>
                         <div class="copyright">
