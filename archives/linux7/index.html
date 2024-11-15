@@ -11,15 +11,15 @@
     <meta name="template" content="Galileo" />
     <link rel="alternate" type="application/rss+xml" title="Ricardoz's Site &raquo; RSS 2.0" href="/feed/index.xml" />
     <link rel="alternate" type="application/atom+xml" title="Ricardoz's Site &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/galileo-3f4dcc35c9.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/galileo-3f4dcc35c9.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/katex.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/bddc32175e9fa554b66b97f5795e0a76.json"
+            api: "https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/bddc32175e9fa554b66b97f5795e0a76.json"
         }
     </script>
     
@@ -87,21 +87,21 @@
 <h2>实验过程</h2>
 <p>Linux上的/proc目录是一种文件系统，称为proc文件系统（虚拟文件系统），它存储内核状态信息，包括cpu、内存以及进程等信息。proc文件系统有很多优点：应用程序获取内核数据不用切换到内核态，增加了系统的安全性（像ps命令就是通过proc获取进程信息）；应用程序可以通过proc直接改变内核参数，这样不用重新编译内核就可以改变和优化内核行为。总之，proc为用户应用程序获取系统内部信息提供了一个安全、方便的界面。proc存在内存中，不占用外存。我们的实验是使用proc文件系统，来获取系统信息<strong>。</strong></p>
 <p>下面是/proc目录下的文件：</p>
-<p><figure style="flex: 74.94714587737843" ><img width="709" height="473" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/e518c14818f4d23cf78d4909bf421ddb.png" /></figure></p>
+<p><figure style="flex: 74.94714587737843" ><img width="709" height="473" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/e518c14818f4d23cf78d4909bf421ddb.png" /></figure></p>
 <p><strong>要求根据上述知识，结合课程内容完成一个查看cpu和内核版本信息以及启动时间的程序。</strong></p>
 <p><strong><br>
 参考解答：</strong></p>
 <p><strong>必要的头文件</strong></p>
-<p><figure style="flex: 80.13392857142857" ><img width="718" height="448" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/8e81c8f924566ebbb296d3366fc95f25.png" /></figure></p>
+<p><figure style="flex: 80.13392857142857" ><img width="718" height="448" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/8e81c8f924566ebbb296d3366fc95f25.png" /></figure></p>
 <p><strong>相关数据结构：</strong></p>
-<p><figure style="flex: 103.81679389312977" ><img width="544" height="262" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/ef2aa853cf82fbcf87e1f8c407426f5a.png" /></figure></p>
+<p><figure style="flex: 103.81679389312977" ><img width="544" height="262" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/ef2aa853cf82fbcf87e1f8c407426f5a.png" /></figure></p>
 <p><strong><br>
 参考代码：</strong></p>
 <p><strong>系统负荷函数：</strong></p>
-<p><figure style="flex: 49.53650057937428" ><img width="855" height="863" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/32ebb6db9f102a7925373d1d38f0f74e.png" /></figure></p>
+<p><figure style="flex: 49.53650057937428" ><img width="855" height="863" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/32ebb6db9f102a7925373d1d38f0f74e.png" /></figure></p>
 <p><strong>观察系统启动时间：</strong></p>
-<p><figure style="flex: 53.669724770642205" ><img width="819" height="763" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/0a218f72fa024223fbf1265beddfb58b.png" /></figure><strong>预期实验效果：</strong></p>
-<p><figure style="flex: 83.2967032967033" ><img width="758" height="455" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/archives/assets/06917261ca972a0d6367aadfab1120d7.png" /></figure></p>
+<p><figure style="flex: 53.669724770642205" ><img width="819" height="763" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/0a218f72fa024223fbf1265beddfb58b.png" /></figure><strong>预期实验效果：</strong></p>
+<p><figure style="flex: 83.2967032967033" ><img width="758" height="455" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/06917261ca972a0d6367aadfab1120d7.png" /></figure></p>
 <h2>实验结果分析</h2>
 <p>1、熟悉并记录命令执行结果。</p>
 <p>2、写出自己的心得体会。3. 实验报告仅提供封面，不提供正文模板。实验报告要求如下：</p>
@@ -163,14 +163,14 @@
                     <script>
                         var site_build_date = "2019-12-18T16:51+08:00"
                     </script>
-                    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/galileo-dc4baa7cf4.js"></script>
+                    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/galileo-dc4baa7cf4.js"></script>
                 </footer>
             </div>
         </div>
     </div>
 
     <!--katex-->
-    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/katex.min.js"></script>
     <script>
     mathOpts = {
         delimiters: [
@@ -181,10 +181,10 @@
         ]
     };
     </script>
-    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
 
-    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/ExSearch/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
 
     
     </body>
