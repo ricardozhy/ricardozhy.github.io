@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Maverick,熊猫小A,Galileo,blog" />
+    <meta name="generator" content="Maverick 1.1" />
+    <meta name="template" content="Galileo" />
+    <link rel="alternate" type="application/rss+xml" title="Ricardoz's Site &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Ricardoz's Site &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/galileo-3f4dcc35c9.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/katex.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/bddc32175e9fa554b66b97f5795e0a76.json"
+        }
+    </script>
+    
+<title>webshell - Ricardoz's Site</title>
+<meta name="author" content="华仔仔" />
+<meta name="description" content="基于web的Linux远程访问系统，Linux编程大作业" />
+<meta property="og:title" content="webshell - Ricardoz's Site" />
+<meta property="og:description" content="基于web的Linux远程访问系统，Linux编程大作业" />
+<meta property="og:site_name" content="Ricardoz's Site" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/webshell/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2022-05-24T01:11:00-00.00" />
+<meta name="twitter:title" content="webshell - Ricardoz's Site" />
+<meta name="twitter:description" content="基于web的Linux远程访问系统，Linux编程大作业" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+
+    </head>
+    
+    <body>
+        
+        <div class="container">
+            <header id="ga-header">
+                <div first>
+                    <aside id="ga-brand">
+                        <h1 class="brand"><a class="no-style" href="/">Ricardoz's Site</a></h1>
+                        <p>凌晨四点，我看海棠花未眠。</p>
+                    </aside>
+                </div>
+                <div second id="ga-nav">
+                    <nav class="navs">
+                        <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="wrapper">
+                
+<main>    
+    <section class="ga-section ga-content">
+        <article class="yue">
+            <h1 class="ga-post_title">webshell</h1>
+            <span class="ga-post_meta ga-mono">
+                <span>华仔仔</span>
+                <time>
+                    2022-05-24
+                </time>
+                
+                in <a no-style class="category" href="/category/Linux/">
+                    Linux
+                </a>
+                
+                
+            </span>
+            <div class="ga-content_body">
+                <h2>写在前面</h2>
+<p>首先为什么有这篇文章，因为我们一门课程的大作业，有一项是基于web的Linux远程访问系统，在这里我记录了这次大作业的全过程，欢迎大家前来交流。</p>
+<p>邮箱：ricardoz_y@qq.com</p>
+<p>服务地址：<a href="https://mblog.ricardoz.site/webshell/">https://mblog.ricardoz.site/webshell/</a></p>
+<p>github：<a href="https://github.com/Ricardo-Zzhao/webshell">https://github.com/Ricardo-Zzhao/webshell</a></p>
+<h2>1.webshell的构建</h2>
+<p>老师讲的是可以通过webssh然后访问浏览器就可以在网页里访问。然后我就想到了之前用的阿里云cloudshell，我可以用iframe将阿里云的cloudshell嵌入我自己的网页，那这样不就可以实现将自己的webshell发布在网上了吗。</p>
+<p>然后就发现你用iframe嵌入阿里云的cloudshell就会直接拒绝连接。之后去网上搜了搜，遇到这种情况一般是阿里云在技术层面上封锁了iframe方法。之后我就搜了cloudshell，发现提供cloudshell的不止阿里云一家。谷歌在2015就发布了cloudshell，我们阿里云的友商腾讯云也提供了cloudshell服务。现在去试试腾讯云的cloudshell，好耶，这次没有拒绝连接。而是获取不到cookie，这总比直接拒绝连接来的好。具体遇到的问题会写在最后，下面开始使用腾讯云提供的cloudshell来搭建一个基于web的Linux远程访问系统。</p>
+<h3>1.1 腾讯云cloudshell</h3>
+<p><figure style="flex: 93.20388349514563" ><img width="1920" height="1030" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/d3434431a151aa7cf8a556a7563f73c1.png" /></figure></p>
+<p>点击控制台</p>
+<p><figure style="flex: 93.20388349514563" ><img width="1920" height="1030" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/9fe379fa5a30d3e1ec4e0f3a9426b33b.png" /></figure></p>
+<p>点击cloudshell，可以看到如下的cloudshell</p>
+<p><figure style="flex: 93.20388349514563" ><img width="1920" height="1030" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/61517cfb81fd215ac5373712f19777d3.png" /></figure></p>
+<p>我们要做的便是将腾讯云提供的cloudshell嵌入我们自己的web中</p>
+<p><a href="https://iaas.cloud.tencent.com/cloudshell">腾讯云cloudshell调用地址</a></p>
+<p>使用iframe将这个网址嵌入自己的网页就好啦，不过我看网上说最好不要使用iframe，好像会影响网络安全</p>
+<p>这是调用的代码</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;iframeContent&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;iframeContent&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://iaas.cloud.tencent.com/cloudshell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+<h3>1.2 目录系统构建</h3>
+<p>我一开始的想法是将老师提供给我们实验的指导书转换成html文件，然后使用框架将8个html写到一起，再做一下装饰。但是！这样做不是很丑吗，一是我不怎么会html语言，word自动转成的html让我感觉有点难以接受。二是我前段时间自己搭了一个博客，何不将实验指导书放进我的博客里面。使用统一的category将他们放在一起，还是用Markdown格式书写的，正好最近比较喜欢这个，何乐而不为呢。于是就有了我这个用来装指导书的category.</p>
+<p><figure style="flex: 92.3076923076923" ><img width="1920" height="1040" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/c4364bbaf638225c7ec039eac5c5fb1e.png" /></figure></p>
+<p>至于如何搭建的这个博客可以看我的github，我也是fork的别人的</p>
+<p><a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate">fork网址</a></p>
+<h2>2.使用iframe框架集成目录系统和cloudssh</h2>
+<p>关于如何使用iframe来集成2个及以上的网页，我是在csdn上看的一篇博客<a href="https://blog.csdn.net/jzy1990/article/details/75806600">网址在这</a>，我修改了一下页面布局，让它更加契合实验楼的风格。下面看看效果。</p>
+<p><figure style="flex: 92.3076923076923" ><img width="1920" height="1040" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/d702b683212acb5232d74cca6b51fd77.png" /></figure></p>
+<p><figure style="flex: 92.3076923076923" ><img width="1920" height="1040" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/711591845c02a3c0347cad7841b824da.png" /></figure></p>
+<p>这里已经将webshell部署在了github上，使用github pages静态托管，可以通过在浏览器输入<a href="https://mblog.ricardoz.site/webshell/">https://mblog.ricardoz.site/webshell/</a>
+来访问，做到这里可以看到大作业到此算是完成了大部分，但是凡是都不是完美的，下面就来说说问题吧。</p>
+<h2>3.关于一些问题</h2>
+<p>本次大作业实现的过程中遇到的问题，下面就统一说下，问题还是比较多的，尤其是不兼容的问题感觉会对本次大作业的评分造成很大的影响。</p>
+<p><strong>1)无法解决跨域问题</strong></p>
+<p>不能说无法解决，应该说我解决不了，通过和老师讨论，老师让我使用js强制写入cookie，我在网上搜了好多如何写js，用js的帖子，找到了不少有很多我看不懂的，其中一篇我觉得写的是我能看懂的，<a href="https://juejin.cn/post/6844904099612196877">网址在这</a></p>
+<p>里面写道有两种方法：1.使用Javascript API将以前通过<code>document.cookie=xxx</code>的方式，修改为我们自定义的<code>setCookie</code>方法来处理就可以了</p>
+<div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">setCookie</span><span class="p">(</span><span class="nx">cookieString</span><span class="p">,</span><span class="w"> </span><span class="nx">canCrossSite</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">cookieString</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">canCrossSite</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">cookieString</span><span class="si">}</span><span class="sb">; SameSite=None; Secure`</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>2.通过请求头中携带<code>Set-Cookie</code>的头信息，可以完成后端请求给浏览器设置<code>cookie</code>，设置以后对于需要跨站请求的<code>cookie</code>就符合我们的预期，例如：</p>
+<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+<span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Set-Cookie&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;key5=page2; SameSite=None; Secure&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;key6=page2&#39;</span><span class="p">]);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3001</span><span class="p">);</span>
+</pre></div>
+<p>访问<code>http://localhost:3001/index</code>以后可以发现，请求<code>cookie</code>携带<code>key6=page2</code></p>
+<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;./key.pem&#39;</span><span class="p">),</span>
+<span class="w">    </span><span class="nx">cert</span><span class="o">:</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;./cert.pem&#39;</span><span class="p">)</span>
+<span class="p">};</span>
+<span class="nx">server</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;/index&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Set-Cookie&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;key5=abc; SameSite=None; Secure;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;key6=def;&#39;</span><span class="p">]);</span>
+<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3001</span><span class="p">);</span>
+</pre></div>
+<p>访问<code>https://localhost:3001/index</code>以后可以发现，请求<code>cookie</code>携带<code>key5=page2</code>和<code>key6=page2</code></p>
+<p>然后我的本次大作业是没有后端的，我只写了一个index.html文件，所以是不可能通过后端来修改的，只能通过前端来修改(也不是不可以写一个后端程序，在我的印象里用Django，flask，springboot都是可以的)，然后我就在我的代码里设置了这个js</p>
+<p><figure style="flex: 129.11877394636016" ><img width="674" height="261" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/afb19df10322b1c18d63401f59fb4122.png" /></figure></p>
+<p>可能是我设置的有问题，但是我是真的不会写前端的东西，所以这个设置了还是和没设置一样，一打开就成了这个老样子</p>
+<p><figure style="flex: 92.3076923076923" ><img width="1920" height="1040" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/66ea9a252997d9fd4fc8854c72f5aa93.png" /></figure></p>
+<p>这句Missing cookie parameters我是真的看烦了，整了它一个星期还是没搞定。</p>
+<p><strong>2)一些产商无法使用iframe嵌入的问题</strong></p>
+<p>阿里云的cloudshell使用iframe的时候就会出现xxx拒绝连接，网址：<a href="https://shell.aliyun.com/">https://shell.aliyun.com/</a> 尝试代码如下</p>
+
+<pre><code>&lt;iframe id="iframe" name="iframe" width="100%" height="100%" frameborder="0" src="https://shell.aliyun.com/" style="height:900px; width:100%;"&gt;&lt;/iframe&gt;</code></pre>
+<p>使用腾讯云的cloudshell，在iframe嵌入时就会遇到上面所说的Missing cookie parameters问题。</p>
+<p><strong>3)iframe布局不知道如何写</strong></p>
+<p>写iframe的时候，一开始只有想法，还不知道如何去实现，最后是参考了一遍博客，参考了人家写的框架，<a href="https://blog.csdn.net/jzy1990/article/details/75806600">参考链接</a></p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html xmlns=" "&gt;
+
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Home&lt;/title&gt;
+    &lt;style&gt;
+        #iframeTop{
+            width: 100%;
+            height: 70px;
+        }
+        #iframeLeft{
+            width: 15%;
+            height: 700px;
+            float: left;
+        }
+        #iframeContent{
+            width: 84%;
+            height: 700px;
+        }
+    &lt;/style&gt;
+&lt;body&gt;
+&lt;div&gt;
+    &lt;iframe id="iframeTop" name="iframeTop" frameborder="0" src="view/top.html"&gt;&lt;/iframe&gt;
+    &lt;iframe id="iframeLeft" name="iframeLeft" frameborder="0" src="view/left.html"&gt;&lt;/iframe&gt;
+    &lt;iframe id="iframeContent" name="iframeContent" frameborder="0" src="view/content.html"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2>4.如何解决</h2>
+<p>1）Chrome浏览器80-94可以通过设置禁用samesite属性</p>
+<p>Chrome浏览器打开新选项卡，并在地址栏中分别输入</p>
+<p>chrome ://flags//same-site-by-default-cookies</p>
+<p>chrome ://flags//# cookies-without-same-site-must-be-secure</p>
+<p>将这两项都设置成disable就可以啦</p>
+<p>2）Chrome94以上设置了samesite属性默认打开，开发者无法手动设置none，所以Chrome94以上的浏览器是用不了了</p>
+<p>3）Chrome80以下的应该是无需设置</p>
+<p>4）使用火狐浏览器可以直接打开，无需设置</p>
+<p>比较chrome和firefox的请求标头和响应标头：</p>
+<p>firefox :在首次启动请求后，服务端返回会话id，然后为请求中的每个cookie带来会话id。</p>
+<p>chrome :由于请求标头始终没有sessionId，且整个cookie为空，因此服务每次都无法接受sessionId，每次都重新分配session。</p>
+<p><strong>还有一些关于cookie，session，token之间有什么关系和区别的知识</strong></p>
+<p>1）cookie数据存放在客户的浏览器上，session数据放在服务器上。</p>
+<p>2）cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗，考虑到安全应当使用session。</p>
+<p>3）session会在一定时间内保存在服务器上，存储在服务器的数据会更加的安全，不容易被窃取。当访问增多，会比较占用你服务器的性能与资源，应当使用cookie。</p>
+<p>4）单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。因此使用cookie只能存储一些小量的数据。</p>
+<p>5）session和session_id：服务器会保存一份，可能保存到缓存/数据库/文件，session_id一般是随机字符串，要到服务器检索id的有效性。Session通过cookie存储session_id，然后具体的数据则是保存在session中。如果用户已经登录，则服务器会在cookie中保存一个session_id，下次再次请求的时候，会把该session_id携带上来，服务器根据session_id在session库中获取用户的session数据。</p>
+<p>6）token：服务器不需要记录任何东西，每次都是一个无状态的请求，每次都是通过解密来验证是否合法。</p>
+<h2>5.快速使用</h2>
+<p>1）使用火狐浏览器或谷歌80以下打开<a href="https://console.cloud.tencent.com/">腾讯云·控制台</a>, 点击右上角工具，cloudshell。</p>
+<p>2）打开<a href="https://mblog.ricardoz.site/webshell/">我的webshell</a>, 左边即为Linux编程实验指导书，右边为腾讯云提供的cloudshell。</p>
+<h2>6.个人感悟</h2>
+<p>在做大作业的时候，越做越到后面，越会忍不住的想，为什么要做这个基于web的Linux远程访问系统。是不想搭建Linux系统吗，显然不是的，一个工科学生谁会没有自己的Linux系统。是想做实验时方便点吗，显然我们使用分屏更简单呀。左边一个word，右边虚拟机这样用起来不是更方便吗？</p>
+<p>这些想法在我看了一些提供学习的平台地方得到答案。我们做的这个基于web的Linux远程访问系统，不应该止步于此呀。为什么要将眼光局限于只能用来做Linux实验呢，我可以多做几个目录呀，学习算法，学习编程，学习c。当你忘了一些Linux操作的时候，打开webshell随手就能打起来了呀。甚至在高铁上想敲代码，走路的时候有好点子想试试呢。这不是很方便吗？</p>
+<p>思止于此，内心对于做了一个几乎没有兼容性的，网页布局很差的webshell有了一些安慰。毕竟第一次做这个东西，很多东西都不是很了解，今后对于这个项目会定期维护的。后期将会加一些别的东西进去。</p>
+
+            </div>
+        </article>
+        <div id="ga-tags">
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/Linux/">#Linux</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/cloudshell/">#cloudshell</a>
+    </span>
+    
+</div>
+    </section>
+
+    
+<section id="ga-content_pager">
+
+    <div class="next">
+        <a class="ga-highlight" href="/archives/shanghai/">旧梦如歌</a>
+        <p class="yue">旧梦</p>
+    </div>
+
+
+    <div class="prev">
+        <a class="ga-highlight" href="/archives/linux8/">Linux实验8</a>
+        <p class="yue">Linux实验8</p>
+    </div>
+
+</section>
+
+
+    
+
+</main>
+
+                <footer class="ga-mono" id="ga-footer">
+                    <section>
+                        <span id="ga-uptime"></span>
+                        <span class="brand">Ricardoz's Site</span>
+                    </section>
+                    <section>
+                        <p class="copyright">
+                            <span>Copyright © 2024 华仔仔</span>
+                            <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
+                        </p>
+                        <div class="copyright">
+                            <span class="footer-addon">
+                                
+                            </span>
+                            <nav class="social-links">
+                                <ul><li><a class="no-style" title="GitHub" href="https://github.com/Ricardo-Zzhao" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
+                            </nav>
+                        </div>
+                    </section>
+                    <script>
+                        var site_build_date = "2019-12-18T16:51+08:00"
+                    </script>
+                    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/galileo-dc4baa7cf4.js"></script>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!--katex-->
+    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/katex.min.js"></script>
+    <script>
+    mathOpts = {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false}
+        ]
+    };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+
+    
+    </body>
+</html>

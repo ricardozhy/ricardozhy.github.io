@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Maverick,熊猫小A,Galileo,blog" />
+    <meta name="generator" content="Maverick 1.1" />
+    <meta name="template" content="Galileo" />
+    <link rel="alternate" type="application/rss+xml" title="Ricardoz's Site &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Ricardoz's Site &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/galileo-3f4dcc35c9.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/katex.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/bddc32175e9fa554b66b97f5795e0a76.json"
+        }
+    </script>
+    
+<title>Linux实验4 - Ricardoz's Site</title>
+<meta name="author" content="华仔仔" />
+<meta name="description" content="Linux实验4" />
+<meta property="og:title" content="Linux实验4 - Ricardoz's Site" />
+<meta property="og:description" content="Linux实验4" />
+<meta property="og:site_name" content="Ricardoz's Site" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/linux4/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2022-05-19T16:51:00-00.00" />
+<meta name="twitter:title" content="Linux实验4 - Ricardoz's Site" />
+<meta name="twitter:description" content="Linux实验4" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+
+    </head>
+    
+    <body>
+        
+        <div class="container">
+            <header id="ga-header">
+                <div first>
+                    <aside id="ga-brand">
+                        <h1 class="brand"><a class="no-style" href="/">Ricardoz's Site</a></h1>
+                        <p>凌晨四点，我看海棠花未眠。</p>
+                    </aside>
+                </div>
+                <div second id="ga-nav">
+                    <nav class="navs">
+                        <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="wrapper">
+                
+<main>    
+    <section class="ga-section ga-content">
+        <article class="yue">
+            <h1 class="ga-post_title">Linux实验4</h1>
+            <span class="ga-post_meta ga-mono">
+                <span>华仔仔</span>
+                <time>
+                    2022-05-19
+                </time>
+                
+                in <a no-style class="category" href="/category/Linux/">
+                    Linux
+                </a>
+                
+                
+            </span>
+            <div class="ga-content_body">
+                <p><strong>实验目的和要求：</strong></p>
+<p>1了解linux时钟中断的原理2 学习进程定时器技术</p>
+<p><strong>实验条件：</strong></p>
+<p>1、装有Linux操作系统的微型计算机；</p>
+<h2>实验过程</h2>
+<p>1 使用定时器的主要是为了周期性的执行某一任务，或者是到了一个指定时间去执行某一个任务。在工程实践中，一般有两个常见的比较有效的方法。一个是用linux内部的三个定时器，另一个是用sleep, usleep函数让进程睡眠一段时间，使用alarm定时发出一个信号，还有那就是用gettimeofday, difftime等自己来计算时间间隔，然后时间到了就执行某一任务，但是这种方法效率低，所以不常用。</p>
+<h4>Linux内置的3个定时器</h4>
+<p>Linux为每个任务安排了3个内部定时器：</p>
+<p>ITIMER_REAL：实时定时器，不管进程在何种模式下运行（甚至在进程被挂起时），它总在计数。定时到达，向进程发送SIGALRM信号。</p>
+<p>ITIMER_VIRTUAL：这个不是实时定时器，当进程在用户模式（即程序执行时）计算进程执行的时间。定时到达后向该进程发送SIGVTALRM信号。</p>
+<p>ITIMER_PROF：进程在用户模式（即程序执行时）和核心模式（即进程调度用时）均计数。定时到达产生SIGPROF信号。ITIMER_PROF记录的时间比ITIMER_VIRTUAL多了进程调度所花的时间。</p>
+<p>定时器在初始化是，被赋予一个初始值，随时间递减，递减至0后发出信号，同时恢复初始值。在任务中，我们可以一种或者全部三种定时器，但同一时刻同一类型的定时器只能使用一个。</p>
+<p>用到的函数有：</p>
+<p>#include \&lt;sys/time.h&gt;<br>
+int getitimer(int which, struct itimerval *value);<br>
+int setitimer(int which, struct itimerval*newvalue, struct itimerval* oldvalue);<br>
+strcut timeval<br>
+{<br>
+long tv_sec; /*秒*/<br>
+long tv_usec; /*微秒*/<br>
+};<br>
+struct itimerval<br>
+{<br>
+struct timeval it_interval; /*时间间隔*/<br>
+struct timeval it_value; /*当前时间计数*/<br>
+};</p>
+<p>it_interval用来指定每隔多长时间执行任务， it_value用来保存当前时间离执行任务还有多长时间。比如说， 你指定it_interval为2秒(微秒为0)，开始的时候我们把it_value的时间也设定为2秒（微秒为0），当过了一秒， it_value就减少一个为1， 再过1秒，则it_value又减少1，变为0，这个时候发出信号（告诉用户时间到了，可以执行任务了），并且系统自动把it_value的时间重置为it_interval的值，即2秒，再重新计数。</p>
+<p>我们的实验是使用Linux定时器，来检测进程的运行时间</p>
+<p><strong>必要的头文件</strong></p>
+<p><figure style="flex: 128.41726618705036" ><img width="357" height="139" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/bf7ed7b9eba7409afeb7edcb72d611df.png" /></figure></p>
+<p><strong>参考代码：</strong></p>
+<p><strong>Main函数：</strong></p>
+<p><figure style="flex: 42.06939281288724" ><img width="679" height="807" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/c70ff37fea7b4b345faac42afbfc1b9c.png" /></figure></p>
+<p><strong>信号处理函数：</strong></p>
+<p><figure style="flex: 125.44910179640719" ><img width="838" height="334" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/44d595718024874c0e052fe627232c4f.png" /></figure></p>
+<p><strong>发送Alarm信号给进程</strong></p>
+<p><figure style="flex: 98.62068965517241" ><img width="858" height="435" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/73fd9fae816da948bd7a0a252d27a70a.png" /></figure></p>
+<h2>实验结果分析</h2>
+<p>1、熟悉并记录命令执行结果。</p>
+<p>2、写出自己的心得体会。3. 实验报告仅提供封面，不提供正文模板。实验报告要求如下：</p>
+<p>1）至少包含实验过程、实验结果、选择部分度量项目对结果进行简要解释。</p>
+<p>2）报告章节要组织合理。</p>
+<p><strong>核心思想是：根据参考案例，结合教材，了解makefile。结合操作系统的知识，你能进一步的结合man手册计算出进程的运行时间吗？</strong></p>
+
+            </div>
+        </article>
+        <div id="ga-tags">
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/Linux/">#Linux</a>
+    </span>
+    
+</div>
+    </section>
+
+    
+<section id="ga-content_pager">
+
+    <div class="next">
+        <a class="ga-highlight" href="/archives/linux5/">Linux实验5</a>
+        <p class="yue">Linux实验5</p>
+    </div>
+
+
+    <div class="prev">
+        <a class="ga-highlight" href="/archives/linux3/">Linux实验3</a>
+        <p class="yue">Linux实验3</p>
+    </div>
+
+</section>
+
+
+    
+
+</main>
+
+                <footer class="ga-mono" id="ga-footer">
+                    <section>
+                        <span id="ga-uptime"></span>
+                        <span class="brand">Ricardoz's Site</span>
+                    </section>
+                    <section>
+                        <p class="copyright">
+                            <span>Copyright © 2024 华仔仔</span>
+                            <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
+                        </p>
+                        <div class="copyright">
+                            <span class="footer-addon">
+                                
+                            </span>
+                            <nav class="social-links">
+                                <ul><li><a class="no-style" title="GitHub" href="https://github.com/Ricardo-Zzhao" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
+                            </nav>
+                        </div>
+                    </section>
+                    <script>
+                        var site_build_date = "2019-12-18T16:51+08:00"
+                    </script>
+                    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/galileo-dc4baa7cf4.js"></script>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!--katex-->
+    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/katex.min.js"></script>
+    <script>
+    mathOpts = {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false}
+        ]
+    };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+
+    
+    </body>
+</html>

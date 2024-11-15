@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Maverick,熊猫小A,Galileo,blog" />
+    <meta name="generator" content="Maverick 1.1" />
+    <meta name="template" content="Galileo" />
+    <link rel="alternate" type="application/rss+xml" title="Ricardoz's Site &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Ricardoz's Site &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/galileo-3f4dcc35c9.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/katex.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/bddc32175e9fa554b66b97f5795e0a76.json"
+        }
+    </script>
+    
+<title>爬取原神同人社的pljj照片 - Ricardoz's Site</title>
+<meta name="author" content="华仔仔" />
+<meta name="description" content="爬取原神同人社的pljj照片" />
+<meta property="og:title" content="爬取原神同人社的pljj照片 - Ricardoz's Site" />
+<meta property="og:description" content="爬取原神同人社的pljj照片" />
+<meta property="og:site_name" content="Ricardoz's Site" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/genshin/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2021-04-24T16:40:00-00.00" />
+<meta name="twitter:title" content="爬取原神同人社的pljj照片 - Ricardoz's Site" />
+<meta name="twitter:description" content="爬取原神同人社的pljj照片" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+
+    </head>
+    
+    <body>
+        
+        <div class="container">
+            <header id="ga-header">
+                <div first>
+                    <aside id="ga-brand">
+                        <h1 class="brand"><a class="no-style" href="/">Ricardoz's Site</a></h1>
+                        <p>凌晨四点，我看海棠花未眠。</p>
+                    </aside>
+                </div>
+                <div second id="ga-nav">
+                    <nav class="navs">
+                        <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="wrapper">
+                
+<main>    
+    <section class="ga-section ga-content">
+        <article class="yue">
+            <h1 class="ga-post_title">爬取原神同人社的pljj照片</h1>
+            <span class="ga-post_meta ga-mono">
+                <span>华仔仔</span>
+                <time>
+                    2021-04-24
+                </time>
+                
+                in <a no-style class="category" href="/category/python/">
+                    python
+                </a>
+                
+                
+            </span>
+            <div class="ga-content_body">
+                <p>最近在学习python，然后看了我室友最近在看小说，就先看了几篇文章，然后爬了本他正在看的小说练练手。然后就有了这篇爬取原神同人社的pljj的照片，第一次写博客，大家多包涵包涵鸭！</p>
+<p>欢迎交流GitHub：Ricardo-Zzhao @<a href="https://github.com/Ricardo-Zzhao">https://github.com/Ricardo-Zzhao</a></p>
+<p>邮箱：ricardoz_y@qq.com</p>
+<p>博客：<a href="https://ricardozhy.github.io/">Ricardoz's Site</a></p>
+<h2>1.首先导入相关的模块</h2>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">jsonpath</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+<h2>2.页面分析</h2>
+<p>先打开<a href="https://bbs.mihoyo.com/ys/home/29?type=hot">米游社·原神</a>
+<figure style="flex: 68.42672413793103" ><img width="1270" height="928" src="https://img-blog.csdnimg.cn/20210423222301524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /></figure>
+找到热门部分，<strong>右击检查，network，ctrl+f8之后点击多回蓝色箭头</strong>，找到下面接口，接口带有getForumPostList，请求拿到数据。
+<figure style="flex: 99.68684759916492" ><img width="955" height="479" src="https://img-blog.csdnimg.cn/20210423223314224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /></figure>
+<figure style="flex: 64.6112600536193" ><img width="964" height="746" src="https://img-blog.csdnimg.cn/20210423223327205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /></figure></p>
+<p>请求网站获取数据</p>
+<div class="highlight"><pre><span></span><span class="n">headers</span> <span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span><span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36&#39;</span>
+        <span class="p">}</span>
+<span class="c1">#构造请求头，把爬虫程序伪装成正常的浏览器用户</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;./原神images&#39;</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;./原神images/&#39;</span><span class="p">)</span>
+<span class="c1">#创建保存图片的文件夹</span>
+
+<span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://bbs-api.mihoyo.com/post/wapi/getForumPostList?forum_id=29&amp;gids=2&amp;is_good=false&amp;is_hot=true&amp;page_size=20&#39;</span>
+</pre></div>
+<p>获取网页参数
+<figure style="flex: 172.33333333333334" ><img width="517" height="150" src="https://img-blog.csdnimg.cn/20210424001944321.png" /></figure></p>
+<div class="highlight"><pre><span></span><span class="n">param</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;forum_id&#39;</span><span class="p">:</span> <span class="s1">&#39;29&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;gids&#39;</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;last_id&#39;</span><span class="p">:</span> <span class="n">image_id</span><span class="p">,</span>
+            <span class="s1">&#39;page_size&#39;</span><span class="p">:</span> <span class="s1">&#39;20&#39;</span>
+            <span class="p">}</span>
+</pre></div>
+<p>last_id: 代表这个数据最后一张图片相对于整个页面图片的位置编号
+page_size: 代表这个数据总共有多少个图片</p>
+<h2>3.解析数据</h2>
+<div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">param</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">apparent_encoding</span>
+    <span class="c1">#使python编码方式自动变化</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+    <span class="c1">#输出status_code，观察网页变化</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">json_data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1">#把字符串转换成json数据</span>
+    <span class="n">image_url</span><span class="o">=</span> <span class="n">jsonpath</span><span class="o">.</span><span class="n">jsonpath</span><span class="p">(</span><span class="n">json_data</span><span class="p">,</span> <span class="s1">&#39;$..images&#39;</span><span class="p">)</span>
+    <span class="c1">#使用jsonpath解析数据，获取所有图片的url，返回的是一个列表</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">image_url</span><span class="p">)</span>
+</pre></div>
+<p>因为requests的时候发现它是一个字典，可以使用Python中的键值索引方式获取到想要的数据，但这里使用了jsonpath解析数据，能够更快捷的获取想要的数据</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">image_url</span><span class="p">:</span>
+        <span class="c1">#遍历拿到每一个URL</span>
+        <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="n">img</span>
+            <span class="n">image_data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">page_url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span>
+            <span class="c1">#使用requests请求图片URL，获取图片数据</span>
+</pre></div>
+<p>使用requests请求每张图片URL，获取图片数据</p>
+<h2>4.数据保存</h2>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">image_name</span><span class="p">,</span> <span class="s1">&#39;下载完毕！！！&#39;</span><span class="p">)</span>
+</pre></div>
+<h2>5.成果展示</h2>
+<p><figure style="flex: 171.24505928853756" ><img width="1733" height="506" src="https://img-blog.csdnimg.cn/20210424003242887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JpY2FyZG9zeWc=,size_16,color_FFFFFF,t_70" /></figure>
+爬取成功啦！</p>
+<h2>6.完整代码</h2>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">jsonpath</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">path</span><span class="o">=</span><span class="s1">&#39;./原神images&#39;</span>
+<span class="n">page</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;请输入您想要爬取的页数：&#39;</span><span class="p">)</span>
+<span class="n">page</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">page</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">headers</span> <span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span><span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36&#39;</span>
+<span class="p">}</span>
+<span class="c1">#构造请求头，把爬虫程序伪装成正常的浏览器用户</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;./原神images&#39;</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;./原神images/&#39;</span><span class="p">)</span>
+<span class="c1">#创建保存图片的文件夹</span>
+
+<span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://bbs-api.mihoyo.com/post/wapi/getForumPostList?forum_id=29&amp;gids=2&amp;is_good=false&amp;is_hot=true&amp;page_size=20&#39;</span>
+<span class="c1"># 资源包的url链接</span>
+
+<span class="n">image_id</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">page</span><span class="p">):</span>
+    <span class="n">param</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;forum_id&#39;</span><span class="p">:</span> <span class="s1">&#39;29&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;gids&#39;</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;last_id&#39;</span><span class="p">:</span> <span class="n">image_id</span><span class="p">,</span>
+            <span class="s1">&#39;page_size&#39;</span><span class="p">:</span> <span class="s1">&#39;20&#39;</span>
+            <span class="p">}</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">param</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">apparent_encoding</span>
+    <span class="c1">#使python编码方式自动变化</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+    <span class="c1">#输出status_code，观察网页变化</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">json_data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1">#把字符串转换成json数据</span>
+    <span class="n">image_url</span><span class="o">=</span> <span class="n">jsonpath</span><span class="o">.</span><span class="n">jsonpath</span><span class="p">(</span><span class="n">json_data</span><span class="p">,</span> <span class="s1">&#39;$..images&#39;</span><span class="p">)</span>
+    <span class="c1">#使用jsonpath解析数据，获取所有图片的url，返回的是一个列表</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">image_url</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">image_url</span><span class="p">:</span>
+        <span class="c1">#遍历拿到每一个URL</span>
+        <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">page_url</span><span class="o">=</span><span class="n">img</span>
+            <span class="n">image_data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">page_url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span>
+            <span class="c1">#使用requests请求图片URL，获取图片数据</span>
+            <span class="n">image_name</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.jpg&#39;</span>
+            <span class="n">image_path</span> <span class="o">=</span> <span class="n">path</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">image_name</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">image_name</span><span class="p">,</span> <span class="s1">&#39;下载完毕！！！&#39;</span><span class="p">)</span>
+            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">image_id</span> <span class="o">+=</span> <span class="mi">20</span>
+</pre></div>
+<h2>7.经验感想</h2>
+<p>今天是第一次写一篇博客，之前一直听说爬虫一项很厉害的技术，正好这学期学了python，就想着什么时候能够爬取一些东西。然后就去看了好几篇大佬的博客，这些代码有很多借鉴他们的地方，在这里想记录一点自己再互联网上留下的记忆，可能很多年过后，想起来自己还写过这样一篇博客。学习计算机我觉得真的要有很浓厚的兴趣，就像现在在学Hadoop，flume，hbase，hive等等，能记录下学习的过程，我觉得真的是一件很美好的事情。要是写的还不错记得点赞，关注，收藏，一键三连啦！阿里嘎多，米娜桑哇！</p>
+<p><strong>Author：RicardoZ 
+CSDN：<a href="https://blog.csdn.net/Ricardosyg">https://blog.csdn.net/Ricardosyg</a></strong></p>
+
+            </div>
+        </article>
+        <div id="ga-tags">
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/python/">#python</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/爬虫/">#爬虫</a>
+    </span>
+    
+</div>
+    </section>
+
+    
+<section id="ga-content_pager">
+
+    <div class="next">
+        <a class="ga-highlight" href="/archives/linux/">Linux常用命令</a>
+        <p class="yue">Linux常用命令</p>
+    </div>
+
+
+    <div class="prev">
+        <a class="ga-highlight" href="/archives/my-first-awesome-post/">我的第一篇文章</a>
+        <p class="yue">Hello World!</p>
+    </div>
+
+</section>
+
+
+    
+
+</main>
+
+                <footer class="ga-mono" id="ga-footer">
+                    <section>
+                        <span id="ga-uptime"></span>
+                        <span class="brand">Ricardoz's Site</span>
+                    </section>
+                    <section>
+                        <p class="copyright">
+                            <span>Copyright © 2024 华仔仔</span>
+                            <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
+                        </p>
+                        <div class="copyright">
+                            <span class="footer-addon">
+                                
+                            </span>
+                            <nav class="social-links">
+                                <ul><li><a class="no-style" title="GitHub" href="https://github.com/Ricardo-Zzhao" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
+                            </nav>
+                        </div>
+                    </section>
+                    <script>
+                        var site_build_date = "2019-12-18T16:51+08:00"
+                    </script>
+                    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/galileo-dc4baa7cf4.js"></script>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!--katex-->
+    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/katex.min.js"></script>
+    <script>
+    mathOpts = {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false}
+        ]
+    };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+
+    
+    </body>
+</html>
