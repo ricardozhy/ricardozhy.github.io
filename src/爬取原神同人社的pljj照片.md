@@ -21,7 +21,7 @@ excerpt: 爬取原神同人社的pljj照片
 
 邮箱：ricardoz_y@qq.com
 
-博客：[Ricardoz's Site](https://mblog.ricardoz.site)
+博客：[Ricardoz's Site](https://ricardozhy.github.io/)
 
 ## 1.首先导入相关的模块
 
