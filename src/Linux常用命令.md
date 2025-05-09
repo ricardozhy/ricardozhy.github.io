@@ -9,7 +9,7 @@ categories:
   - Linux
 tags: 
   - Linux
-excerpt: Linux常用命令
+excerpt: Linux实验
 ---
 
 Linux常用命令
