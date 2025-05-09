@@ -1,174 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ricardoz's Site</title><link>/</link><description>凌晨四点，我看海棠花未眠。</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/logo.png</url><title>Ricardoz's Site</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Fri, 09 May 2025 08:44:32 +0806</lastBuildDate><pubDate>Fri, 09 May 2025 08:44:32 +0806</pubDate><item><title>Linux常用命令</title><link>/archives/linux/</link><description>&lt;p&gt;Linux常用命令
-欢迎交流GitHub：Ricardo-Zzhao @&lt;a href="https://github.com/Ricardo-Zzhao"&gt;https://github.com/Ricardo-Zzhao&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;邮箱：ricardoz_y@qq.com&lt;/p&gt;
-&lt;p&gt;博客：&lt;a href="https://mblog.ricardoz.site"&gt;Ricardoz's Site&lt;/a&gt;&lt;/p&gt;
-&lt;h1&gt;（1）指令名称：pwd&lt;/h1&gt;
-&lt;p&gt;pwd命令也是最常用最基本的命令之一，用于显示用户当前所在的目录。&lt;/p&gt;
-&lt;p&gt;&lt;figure style="flex: 280.4878048780488" &gt;&lt;img width="460" height="82" src="https://img-blog.csdnimg.cn/9d99f7e0ba154ae3959b49270b25f2c5.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（2）指令名称：cd&lt;/h1&gt;
-&lt;p&gt;cd命令不仅显示当前状态，还改变当前状态，它的用法跟dos下的cd命令基本一致。 
-cd ..可进入上一层目录 
-cd -可进入上一个进入的目录 
-cd ~可进入用户的home目录
-&lt;figure style="flex: 178.94736842105263" &gt;&lt;img width="408" height="114" src="https://img-blog.csdnimg.cn/f2e51629b7104d0bb4d6a0cccab0e1d3.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（3）指令名称：cp&lt;/h1&gt;
-&lt;p&gt;使用方式： 
-cp [options] source dest 
-cp [options] source... directory 
-说明：将一个档案拷贝至另一档案，或将数个档案拷贝至另一目录。&lt;/p&gt;
-&lt;p&gt;范例： 
-将档案 aaa 复制(已存在)，并命名为 bbb : 
-cp aaa bbb 
-将所有的C语言程式拷贝至 Finished 子目录中 : 
-cp *.c Finished
-&lt;figure style="flex: 345.39473684210526" &gt;&lt;img width="525" height="76" src="https://img-blog.csdnimg.cn/d1aa4842d7c14bce9a82af050c2ccac3.png#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 196.61654135338347" &gt;&lt;img width="523" height="133" src="https://img-blog.csdnimg.cn/0984f607d2c7473394d8300d681cb2ad.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（4）名称：mv&lt;/h1&gt;
-&lt;p&gt;使用方式：mv [options] source dest 
-mv [options] source... directory 
-说明：将一个档案移至另一档案，或将数个档案移至另一目录。 
-参数：-i 若目的地已有同名档案，则先询问是否覆盖旧档。 
-范例： 
-将档案 aaa 更名为 bbb : 
-mv aaa bbb 
-将所有的C语言程序移至 Finished 子目录中 : 
-mv -i *.c /Finished&lt;/p&gt;
-&lt;p&gt;&lt;figure style="flex: 134.4262295081967" &gt;&lt;img width="492" height="183" src="https://img-blog.csdnimg.cn/bbe43586652c438d971cc4571b6d78c7.png#pic_center" /&gt;&lt;figcaption&gt;在这里插入图片描述&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（5）指令名称 : chmod&lt;/h1&gt;
-&lt;p&gt;使用方式 : chmod [-cfvR] [--help] [--version] mode file... 
-说明 : Linux/Unix 的档案存取权限分为三级 : 档案拥有者、群组、其他。利用 chmod 可以藉以控制档案如何被他人所存取。&lt;/p&gt;
-&lt;p&gt;mode : 权限设定字串，格式如下 : [ugoa...][+-=][rwxX]...][,...]，其中u 表示该档案的拥有者，g 表示与该档案的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;表示增加权限、- 表示取消权限、= 表示唯一设定权限。
-r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该档案是个子目录或者该档案已经被设定过为可执行。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;范例 :将档案 file1.txt 设为所有人皆可读取 : 
-chmod ugo+r file1.txt 
-将档案 file1.txt 设为所有人皆可读取 : 
-chmod a+r file1.txt 
-将档案 file1.txt 与 file2.txt 设为该档案拥有者，与其所属同一个群体者可写入，但其他以外的人则不可写入 : 
-chmod ug+w,o-w file1.txt file2.txt 
-将 ex1.py 设定为只有该档案拥有者可以执行 : 
-chmod u+x ex1.py 
-将目前目录下的所有档案与子目录皆设为任何人可读取 : 
-chmod -R a+r * 
-此外chmod也可以用数字来表示权限如 chmod 777 file 
-语法为：chmod abc file 
-其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。
-r=4，w=2，x=1 
-若要rwx属性则4+2+1=7； 
-若要rw-属性则4+2=6；
-若要r-x属性则4+1=7。
-范例： 
-chmod a=rwx file        和    chmod 777 file    效果相同 
-chmod ug=rwx,o=x file   和    chmod 771 file    效果相同 
-若用chmod 4755 filename可使此程式具有root的权限
-&lt;figure style="flex: 258.7628865979381" &gt;&lt;img width="502" height="97" src="https://img-blog.csdnimg.cn/69feb178745844c994d52abed69fb58b.png#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 542.7083333333334" &gt;&lt;img width="521" height="48" src="https://img-blog.csdnimg.cn/4825ca2fa75f403db774c1d47a97484e.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（6）指令名称 : ls&lt;/h1&gt;
-&lt;p&gt;使用方式 : ls [-alrtAFR] [name...] 
-说明 : 显示指定工作目录下之内容（列出目前工作目录所含之档案及子目录)。&lt;/p&gt;
-&lt;p&gt;范例： 
-列出目前工作目录下所有名称是 s 开头的档案，愈新的排愈后面 : 
-ls -ltr s&lt;em&gt; 
-将 /bin 目录以下所有目录及档案详细资料列出 : 
-ls -lR /bin 
-列出目前工作目录下所有档案及目录；目录于名称后加 "/", 可执行档于名称后加 "&lt;/em&gt;" : 
-ls -AF 
-&lt;figure style="flex: 168.4971098265896" &gt;&lt;img width="583" height="173" src="https://img-blog.csdnimg.cn/5a77d2e6dc28484b8b11ba486a732814.png#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 306.06060606060606" &gt;&lt;img width="606" height="99" src="https://img-blog.csdnimg.cn/d86fe5ce452a4dc4b4a21bc273027457.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（7）指令名称：rm&lt;/h1&gt;
-&lt;p&gt;使用方式：rm [options] name... 
-说明：删除档案及目录。&lt;/p&gt;
-&lt;p&gt;范例：
-删除所有C语言程式档；删除前逐一询问确认 : 
-rm -i *.c 
-将 Finished 子目录及子目录中所有档案删除 : 
-rm -r Finished 
-&lt;figure style="flex: 420.90909090909093" &gt;&lt;img width="463" height="55" src="https://img-blog.csdnimg.cn/0bdaaaf06ef241d29d9d60d8274c14c0.png#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 437.0689655172414" &gt;&lt;img width="507" height="58" src="https://img-blog.csdnimg.cn/03a5ff4b319b45db9c5e6d23b5f309ac.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（8）指令名称：rmdir&lt;/h1&gt;
-&lt;p&gt;使用方式： rmdir [-p] dirName 
-说明： 删除空的目录。 
-参数： -p 是当子目录被删除后使它也成为空目录的话，则顺便一并删除。 
-范例： 
-将工作目录下，名为 AAA 的子目录删除 : 
-rmdir AAA 
-在工作目录下的 BBB 目录中，删除名为 Test 的子目录。若 Test 删除后，BBB 目录成为空目录，则 BBB 亦予删除。 
-rmdir -p BBB/Test&lt;/p&gt;
-&lt;p&gt;&lt;figure style="flex: 421.9298245614035" &gt;&lt;img width="481" height="57" src="https://img-blog.csdnimg.cn/703e692640694e6892618c45923bdb68.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（9）指令名称：touch&lt;/h1&gt;
-&lt;p&gt;使用方式： 
-touch [-acfm] 
-[-r reference-file] [--file=reference-file] 
-[-t MMDDhhmm[CC]YY][.ss] 
-[-d time] [--date=time] [--time={atime,access,use,mtime,modify}]
-[--no-create] [--help] [--version] 
-file1 [file2 ...] 
-说明：
-touch 指令改变档案的时间记录。 ls -l 可以显示档案的时间记录。
-&lt;figure style="flex: 103.05755395683454" &gt;&lt;img width="573" height="278" src="https://img-blog.csdnimg.cn/ea8a4a8a30cc4ca692887eca1cdf9824.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmljYXJkb1p6eno=,size_16,color_FFFFFF,t_70,g_se,x_16#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（10）指令名称：gzip&lt;/h1&gt;
-&lt;p&gt;说明：gzip命令用于压缩文件。 
-参数 ： -d 将压缩文件解压
-范例：
-如果要将ye.txt文件压缩，可用如下命令： 
-gzip ye.txt 
-这样就可以压缩文件并在文件名后面加上gz扩展名，变成文件ye.txt.gz。 
-解压缩文件可用gzip -d命令实现： 
-gzip -d ye.txt.gz 
-这样就可以解压缩文件并删除gz扩展名。&lt;/p&gt;
-&lt;p&gt;&lt;figure style="flex: 428.44827586206895" &gt;&lt;img width="497" height="58" src="https://img-blog.csdnimg.cn/248a7cdddbad4bba8aff7d8d1e26a2aa.png#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（11）指令名称：tar&lt;/h1&gt;
-&lt;p&gt;说明：tar可以为文件和目录创建档案。利用tar，用户可以为某一特定文件创建档案（备份文件），也可以在档案中改变文件，或者向档案中加入新的文件。tar最初被用来在磁带上创建档案，现在，用户可以在任何设备上创建档案，如软盘。利用tar命令，可以把一大堆的文件和目录全部打包成一个文件，这对于备份文件或将几个文件组合成为一个文件以便于网络传输是非常有用的。&lt;/p&gt;
-&lt;p&gt;范例：
-可用如下方法建立tar档案： 
-tar cvf 
-例如，如果要将当前目录中所有文件存档到ye.tar中，可用如下命令： 
-tar cvf ye.tar &lt;em&gt;.&lt;/em&gt; 
-要浏览档案内容，将c选项变成t。如果要浏览ye.tar档案中的内容，可用如下命令： 
-tar tvf ye.tar 
-要取出档案内的内容，将c选项变成x。如果要将ye.tar档案中的内容取到当前目录中，可用如下命令： 
-tar xvf ye.tar&lt;/p&gt;
-&lt;p&gt;新版的tar可以直接访问和建立gzip压缩的tar档案，只要在tar命令中加上z 选项就可以了。例如： 
-生成压缩档案ye.tar.gz ：
-tar czvf ye.tar &lt;em&gt;.txt 
-显示压缩档案ye.tar.gz的内容：
-tar tzvf ye.tar &lt;/em&gt;.txt 
-取出压缩档案ye.tar.gz的内容：
-tar xzvf ye.tar *.txt 
-&lt;figure style="flex: 91.69329073482429" &gt;&lt;img width="574" height="313" src="https://img-blog.csdnimg.cn/d6ce5175e26a463a8d6d27344180b1dd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmljYXJkb1p6eno=,size_16,color_FFFFFF,t_70,g_se,x_16#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 119.37984496124031" &gt;&lt;img width="616" height="258" src="https://img-blog.csdnimg.cn/38d58471b7ba4614bf12125c96bf5639.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmljYXJkb1p6eno=,size_17,color_FFFFFF,t_70,g_se,x_16#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（12）指令名称：mail&lt;/h1&gt;
-&lt;p&gt;使用方式：mail [-iInv] [-s subject] [-c cc-addr] [-b bcc-addr] user1 [user 2 ...] 
-说明： 
-mail 不仅只是一个指令， mail 还是一个电子邮件程序。&lt;/p&gt;
-&lt;p&gt;参数：
-s 邮件标题 
-c 邮件地址 （2个地址以上用，一个地址不用加此参数）&lt;/p&gt;
-&lt;p&gt;范例： 
-①将信件送给一个或以上的电子邮件地址，由于没有加入其他的选项，使用者必须输入标题与信件的内容等。
-mail user01@mcs.njnu.edu.cn
-系统会提示输入“subject”
-②将 mail.txt 的内容寄给yzhu@mcs.hpc.njnu.edu.cn ，同时抄送给root@mcs.hpc.njnu.edu.cn
-mail -s “标题” -c yzhu@mcs.hpc.njnu.edu.cn  root@mcs.hpc.njnu.edu.cn &amp;lt;  mail.txt 
-接收到的邮件都保存在目录 /var/spool/mail/用户名&lt;/p&gt;
-&lt;p&gt;&lt;figure style="flex: 335.2040816326531" &gt;&lt;img width="657" height="98" src="https://img-blog.csdnimg.cn/4587efbbb7e74d0ba2e80bf51d7582f9.png#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 155.0" &gt;&lt;img width="713" height="230" src="https://img-blog.csdnimg.cn/3185aea2a4ed4a7097113a5528dac893.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmljYXJkb1p6eno=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" /&gt;&lt;/figure&gt;
-&lt;figure style="flex: 121.8213058419244" &gt;&lt;img width="709" height="291" src="https://img-blog.csdnimg.cn/cf4de1453333475bba8315cf53e5abcc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmljYXJkb1p6eno=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（13）指令名称 : wall （选做）&lt;/h1&gt;
-&lt;p&gt;使用方式 :
-wall [ message ] 
-使用说明： 
-wall 会将讯息传给每一个 mesg 设定为 yes 的上线使用者。
-例子 :
-传讯息"hi" 给每一个使用者 : 
-wall hi
-&lt;figure style="flex: 127.5" &gt;&lt;img width="867" height="340" src="https://img-blog.csdnimg.cn/2733f03cd0554a308b87e8abd2ec72e5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmljYXJkb1p6eno=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1&gt;（13）感悟&lt;/h1&gt;
-&lt;p&gt;做完本次实验感觉还是有很多的收货的，原本对这些操作只是有点映像，现在对于这些操作更加的得心应手了，知道了mail和wall的用法，同时老师让我们看more，CJSON的源码，感觉对这些还是有点难度的，有点看不懂，希望在以后的学习中能过加强对这些的理解。&lt;/p&gt;
-</description><author>hi@imalan.cn (华仔仔)</author><guid isPermaLink="true">/archives/linux/</guid><pubDate>Thu, 24 Mar 2022 16:40:00 +0806</pubDate></item><item><title>识途</title><link>/archives/shitu/</link><description>&lt;p&gt;妍望着手中初成的画稿，露出了连日来的第一个微笑……&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ricardoz's Site</title><link>/</link><description>凌晨四点，我看海棠花未眠。</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/logo.png</url><title>Ricardoz's Site</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Fri, 09 May 2025 08:57:38 +0806</lastBuildDate><pubDate>Fri, 09 May 2025 08:57:38 +0806</pubDate><item><title>识途</title><link>/archives/shitu/</link><description>&lt;p&gt;妍望着手中初成的画稿，露出了连日来的第一个微笑……&lt;/p&gt;
 &lt;p&gt;红，满目的红。红绸，红幔，红纱，红烛，还有着红衣的女子，一如她出嫁，他出征的那日。&lt;/p&gt;
 &lt;p&gt;峨眉轻扫，朱砂点唇，素手挽发，眉目轻阖，敛去眸中的一丝忧愁，“刷——”灯盏亮起，点点火光映得女子素来清冷的眸子中也染上了几分暖色。东方尚未破晓，萦着湿冷气息的晨雾中，女子的身影慢慢向城门外移动着。风声烈烈，卷起漫漫黄沙，女子手提灯盏，任风卷起衣袂翩飞，身形丝毫未变，目光也始终落在不见半点人影的远方。就是今天了，今天是战胜的军队归来的日子。……&lt;/p&gt;
 &lt;p&gt;妍望着这部名为《识途》的影片，眼中盈着点点星辉。&lt;/p&gt;
@@ -587,4 +418,17 @@ struct timeval it_value; /*当前时间计数*/&lt;br&gt;
 &lt;p&gt;在做大作业的时候，越做越到后面，越会忍不住的想，为什么要做这个基于web的Linux远程访问系统。是不想搭建Linux系统吗，显然不是的，一个工科学生谁会没有自己的Linux系统。是想做实验时方便点吗，显然我们使用分屏更简单呀。左边一个word，右边虚拟机这样用起来不是更方便吗？&lt;/p&gt;
 &lt;p&gt;这些想法在我看了一些提供学习的平台地方得到答案。我们做的这个基于web的Linux远程访问系统，不应该止步于此呀。为什么要将眼光局限于只能用来做Linux实验呢，我可以多做几个目录呀，学习算法，学习编程，学习c。当你忘了一些Linux操作的时候，打开webshell随手就能打起来了呀。甚至在高铁上想敲代码，走路的时候有好点子想试试呢。这不是很方便吗？&lt;/p&gt;
 &lt;p&gt;思止于此，内心对于做了一个几乎没有兼容性的，网页布局很差的webshell有了一些安慰。毕竟第一次做这个东西，很多东西都不是很了解，今后对于这个项目会定期维护的。后期将会加一些别的东西进去。&lt;/p&gt;
-</description><author>hi@imalan.cn (华仔仔)</author><guid isPermaLink="true">/archives/webshell/</guid><pubDate>Tue, 24 May 2022 01:11:00 +0806</pubDate></item></channel></rss>
+</description><author>hi@imalan.cn (华仔仔)</author><guid isPermaLink="true">/archives/webshell/</guid><pubDate>Tue, 24 May 2022 01:11:00 +0806</pubDate></item><item><title>秋梦离</title><link>/archives/autumn-dream/</link><description>&lt;p&gt;秋梦离推开老宅斑驳的木门时，一片银杏叶正巧落在她肩头。门轴发出悠长的呻吟，灰尘在斜射的晨光中起舞，像被惊扰的时光碎片。&lt;/p&gt;
+&lt;p&gt;阁楼木梯比她记忆中陡峭许多。手指触到那口樟木箱铜锁的瞬间，某种温热的震颤突然从指尖窜上心口。钥匙在锁孔里转动的声响，惊醒了沉睡六十年的往事。&lt;/p&gt;
+&lt;p&gt;泛黄的信笺如蝶翼纷飞，秋梦离跪坐在光影里，看着信封上遒劲的毛笔字——"沈青梧亲启"。最上层的信纸已经脆薄如蝉蜕，墨迹却依然清晰："见字如晤，今晨码头雾气甚重，恍惚见你蓝衫身影......"&lt;/p&gt;
+&lt;p&gt;楼下突然传来脚步声。秋梦离慌忙起身，老旧的木地板发出吱呀抗议。转身时，她撞进一双琥珀色的眼睛。男人后退半步，黑色羊绒大衣沾着几片金叶，怀里抱着牛皮纸包裹的旧书。&lt;/p&gt;
+&lt;p&gt;"抱歉，门没关。"他的声音像深秋的泉水，指节分明的手扶住摇摇欲坠的纸堆，"这些是......民国三十七年的《申报》？"&lt;/p&gt;
+&lt;p&gt;秋梦离注意到他袖口沾着靛蓝颜料，衣领间隐约透出檀香。男人弯腰拾起飘落的信纸时，后颈露出一道月牙形疤痕，与祖母日记里描述的伤痕惊人相似。&lt;/p&gt;
+&lt;p&gt;"我叫周延之，在文物局工作。"他递还信纸的动作忽然顿住，目光落在某页信尾的银杏叶标本上。褪成淡褐的叶脉间，依稀可见钢笔写就的诗句：纵使相逢应不识，尘满面，鬓如霜。&lt;/p&gt;
+&lt;p&gt;阁楼西窗突然灌进一阵疾风，信纸如白鸟惊飞。秋梦离伸手去抓飘向窗外的纸页，却被周延之握住手腕。他的掌心有细茧，温度却冷得像深井水。&lt;/p&gt;
+&lt;p&gt;"小心。"他说这话时，一片金叶擦过他微颤的睫毛。秋梦离忽然想起昨夜那个梦：穿月白长衫的男人站在银杏树下，指尖抚过树干刻痕，转身时漫天金雨模糊了面容。&lt;/p&gt;
+&lt;p&gt;地下室传来座钟闷响，惊散凝滞的空气。周延之退后时碰倒了倚墙的画框，玻璃碎裂声里，褪色的油画露出夹层——张泛黄的照片飘然而落。穿阴丹士林旗袍的少女与戎装青年并肩立于银杏树下，青年后颈的月牙疤清晰可辨。&lt;/p&gt;
+&lt;p&gt;秋梦离蹲身捡照片时，听见周延之倒抽冷气的声音。他的手指悬在照片上方颤抖，袖口滑落露出腕间红绳，绳结样式与祖母临终前塞给她的那枚别无二致。&lt;/p&gt;
+&lt;p&gt;暮色漫进窗棂时，他们坐在回廊剥蚀的红漆柱下。周延之解开牛皮纸包裹，取出本残缺的《楚辞》，扉页题着"青梧存念"。当他念出"袅袅兮秋风，洞庭波兮木叶下"，秋梦离突然记起祖母昏迷前的呓语："他说战事平息就回来栽银杏......"&lt;/p&gt;
+&lt;p&gt;夜风卷着银杏叶叩打窗纸，沙沙声里混着遥远的汽笛。秋梦离望着周延之修补画框的侧影，月光将他睫毛的阴影投在泛黄的照片上，与戎装青年的轮廓完美重叠。&lt;/p&gt;
+</description><author>hi@imalan.cn (华仔仔)</author><guid isPermaLink="true">/archives/autumn-dream/</guid><pubDate>Fri, 09 May 2025 16:30:00 +0806</pubDate></item></channel></rss>
