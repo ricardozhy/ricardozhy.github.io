@@ -9,7 +9,7 @@ categories:
   - Linux
 tags: 
   - Linux
-excerpt: Linux实验3
+excerpt: Linux实验
 ---
 
 **实验目的和要求：**
