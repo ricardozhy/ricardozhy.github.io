@@ -9,7 +9,7 @@ categories:
   - Linux
 tags: 
   - Linux
-excerpt: Linux实验4
+excerpt: Linux实验
 
 ---
 
