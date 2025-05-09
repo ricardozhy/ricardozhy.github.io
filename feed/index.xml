@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ricardoz's Site</title><link>/</link><description>凌晨四点，我看海棠花未眠。</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/logo.png</url><title>Ricardoz's Site</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Fri, 09 May 2025 08:57:38 +0806</lastBuildDate><pubDate>Fri, 09 May 2025 08:57:38 +0806</pubDate><item><title>识途</title><link>/archives/shitu/</link><description>&lt;p&gt;妍望着手中初成的画稿，露出了连日来的第一个微笑……&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ricardoz's Site</title><link>/</link><description>凌晨四点，我看海棠花未眠。</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/logo.png</url><title>Ricardoz's Site</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Fri, 09 May 2025 10:01:31 +0806</lastBuildDate><pubDate>Fri, 09 May 2025 10:01:31 +0806</pubDate><item><title>识途</title><link>/archives/shitu/</link><description>&lt;p&gt;妍望着手中初成的画稿，露出了连日来的第一个微笑……&lt;/p&gt;
 &lt;p&gt;红，满目的红。红绸，红幔，红纱，红烛，还有着红衣的女子，一如她出嫁，他出征的那日。&lt;/p&gt;
 &lt;p&gt;峨眉轻扫，朱砂点唇，素手挽发，眉目轻阖，敛去眸中的一丝忧愁，“刷——”灯盏亮起，点点火光映得女子素来清冷的眸子中也染上了几分暖色。东方尚未破晓，萦着湿冷气息的晨雾中，女子的身影慢慢向城门外移动着。风声烈烈，卷起漫漫黄沙，女子手提灯盏，任风卷起衣袂翩飞，身形丝毫未变，目光也始终落在不见半点人影的远方。就是今天了，今天是战胜的军队归来的日子。……&lt;/p&gt;
 &lt;p&gt;妍望着这部名为《识途》的影片，眼中盈着点点星辉。&lt;/p&gt;
@@ -21,7 +21,7 @@
 </description><author>hi@imalan.cn (六佰)</author><guid isPermaLink="true">/archives/shitu/</guid><pubDate>Mon, 16 May 2022 01:40:00 +0806</pubDate></item><item><title>Linux实验2</title><link>/archives/linux2/</link><description>&lt;p&gt;&lt;strong&gt;实验目的和要求：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;进程的基本概念及进程的结构Linux环境下进程的相关函数的应用守护进程的概念、启动和建立进程控制程序的编写&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;实验条件：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;1、装有Linux操作系统的微型计算机；&lt;/p&gt;
+&lt;p&gt;1、装有Linux操作系统的微型计算机&lt;/p&gt;
 &lt;h2&gt;实验过程&lt;/h2&gt;
 &lt;p&gt;Liunx进程创建&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;figure style="flex: 134.62686567164178" &gt;&lt;img width="902" height="335" src="https://cdn.jsdelivr.net/gh/ricardozhy/ricardozhy.github.io@master/archives/assets/66d1b538d4a0033988fc8849a7f2b1ea.png" /&gt;&lt;/figure&gt;&lt;/strong&gt;&lt;/p&gt;
