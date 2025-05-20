@@ -12,6 +12,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+    <loc>/archives/QPM-1K-32B-R1/</loc>
+    <lastmod>2025-05-20</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
     <loc>/archives/autumn-dream/</loc>
     <lastmod>2025-05-09</lastmod>
     <changefreq>always</changefreq>
